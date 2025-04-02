@@ -2,3 +2,5 @@
 /logs
 /venv
 /.venv
+/tests/__pycache__
+/.idea
