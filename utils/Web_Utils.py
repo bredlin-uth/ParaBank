@@ -116,3 +116,16 @@ class WebUtils:
             self.logger.error(f"Error selecting option with value '{value}' from dropdown {locator}: {e}")
             allure.attach(f"Error selecting option with value '{value}' from dropdown {locator}: {e}",
                           name="Dropdown Selection Error", attachment_type=allure.attachment_type.TEXT)
+
+    def select_by_index(self, locator,index):
+        """Select the dropdown option based on the index from dropdown."""
+        try:
+            element = self.wait.until(EC.presence_of_element_located(locator))
+            Select(element).select_by_index(index)
+            self.logger.info(f"Selected option with index '{index}' from dropdown {locator}")
+            allure.attach(f"Selected option with index '{index}' from dropdown {locator}", name="Dropdown Selection",
+                          attachment_type=allure.attachment_type.TEXT)
+        except (NoSuchElementException, TimeoutException) as e:
+            self.logger.error(f"Error selecting option with index '{index}' from dropdown {locator}: {e}")
+            allure.attach(f"Error selecting option with index '{index}' from dropdown {locator}: {e}",
+                          name="Dropdown Selection Error", attachment_type=allure.attachment_type.TEXT)

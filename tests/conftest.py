@@ -39,7 +39,7 @@ def setup_and_teardown(request):
 
     driver.maximize_window()
     driver.implicitly_wait(15)
-    base_url = None
+    base_url = 'https://parabank.parasoft.com/parabank/register.htm'
     driver.get(base_url)
 
     request.cls.driver = driver  # Assign driver instance to the test class
