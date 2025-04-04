@@ -1,4 +1,6 @@
 import random
+import re
+
 from faker import Faker
 
 fake = Faker()
@@ -21,3 +23,17 @@ def generate_random_user_for_registration():
         'pwd': "Test@123",
         'pwd1': "Test@123",
     }
+
+
+def compare_currency_with_number(value1, value2):
+    """
+    Compare a currency-formatted string
+    Returns True if they are equal after conversion, else False.
+    """
+    def normalize(value):
+        if isinstance(value, str):
+            value = re.sub(r'[^0-9.]', '', value)  # Remove non-numeric characters except '.'
+        return float(value)
+
+    return round(normalize(value1), 2) == round(normalize(value2), 2)
+
