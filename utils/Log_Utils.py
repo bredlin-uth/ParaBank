@@ -5,7 +5,7 @@ import os
 def setup_logging(log_dir='test_output/logs'):
     # Create a timestamp
     timestamp = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
-    log_filename = f'flipkart_{timestamp}.log'
+    log_filename = f'parabank_{timestamp}.log'
     # Ensure the log directory exists
     os.makedirs(log_dir, exist_ok=True)
 
