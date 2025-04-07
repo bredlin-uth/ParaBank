@@ -1,0 +1,31 @@
+2025-04-07 10:59:36,556 - Register - INFO - Web_Utils.py:24 - Clicked element: ('link text', 'Register')
+2025-04-07 10:59:36,732 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.firstName'): Donna
+2025-04-07 10:59:36,886 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.lastName'): Flores
+2025-04-07 10:59:36,996 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.address.street'): 925 Brown Village
+2025-04-07 10:59:37,160 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.address.city'): Kentville
+2025-04-07 10:59:37,342 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.address.state'): Minnesota
+2025-04-07 10:59:37,440 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.address.zipCode'): 690877
+2025-04-07 10:59:37,538 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.phoneNumber'): 9765737708
+2025-04-07 10:59:37,636 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.ssn'): 9272
+2025-04-07 10:59:37,734 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.username'): maureen56624
+2025-04-07 10:59:37,817 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.password'): Test@123
+2025-04-07 10:59:37,906 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'repeatedPassword'): Test@123
+2025-04-07 10:59:38,410 - Register - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//input[@value='Register']")
+2025-04-07 10:59:39,518 - Register - INFO - Web_Utils.py:24 - Clicked element: ('link text', 'Log Out')
+2025-04-07 10:59:39,624 - Login - INFO - Web_Utils.py:43 - Entered text in element ('xpath', "//div[@class='login']/input[@name='username']"): maureen56624
+2025-04-07 10:59:39,715 - Login - INFO - Web_Utils.py:43 - Entered text in element ('xpath', "//div[@class='login']/input[@name='password']"): Test@123
+2025-04-07 10:59:41,061 - Login - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//div[@class='login']/input[@value='Log In']")
+2025-04-07 10:59:43,353 - RequestLoan - INFO - Web_Utils.py:60 - Element ('xpath', "//h1[contains(text(),'Apply for a Loan')]") visibility: True
+2025-04-07 10:59:43,680 - RequestLoan - INFO - Request_Loan.py:38 - Navigate to the Request Loan page
+2025-04-07 10:59:43,828 - RequestLoan - INFO - Web_Utils.py:43 - Entered text in element ('id', 'amount'): 200
+2025-04-07 10:59:43,976 - RequestLoan - INFO - Web_Utils.py:43 - Entered text in element ('id', 'downPayment'): 50
+2025-04-07 10:59:44,128 - RequestLoan - INFO - Web_Utils.py:120 - Selected option with value '19005' from dropdown ('id', 'fromAccountId')
+2025-04-07 10:59:44,281 - RequestLoan - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//input[@value='Apply Now']")
+2025-04-07 10:59:47,317 - RequestLoan - INFO - Web_Utils.py:60 - Element ('xpath', "//h1[contains(text(),'Loan Request Processed')]") visibility: True
+2025-04-07 10:59:47,525 - RequestLoan - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//td[@id='loanProviderName']/parent::tr"): Loan Provider: Wealth Securities Dynamic Loans (WSDL)
+2025-04-07 10:59:47,556 - RequestLoan - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//td[@id='responseDate']/parent::tr"): Date: 04-7-2025
+2025-04-07 10:59:47,597 - RequestLoan - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//td[@id='loanStatus']/parent::tr"): Status: Approved
+2025-04-07 10:59:47,634 - RequestLoan - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'loanRequestApproved'): Congratulations, your loan has been approved.
+Your new account number: 19116
+2025-04-07 10:59:47,679 - RequestLoan - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'newAccountId'): 19116
+2025-04-07 10:59:47,712 - RequestLoan - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//a[@id='newAccountId']/parent::p"): Your new account number: 19116

@@ -4,3 +4,5 @@
 /.venv
 /tests/__pycache__
 /.idea
+/tests/test_output
+/allure-report

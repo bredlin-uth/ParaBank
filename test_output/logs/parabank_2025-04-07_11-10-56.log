@@ -1,0 +1,31 @@
+2025-04-07 11:11:05,809 - Register - INFO - Web_Utils.py:24 - Clicked element: ('link text', 'Register')
+2025-04-07 11:11:06,023 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.firstName'): Robert
+2025-04-07 11:11:06,206 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.lastName'): Harper
+2025-04-07 11:11:06,394 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.address.street'): 095 Dillon Inlet Suite 128
+2025-04-07 11:11:06,551 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.address.city'): East Robertville
+2025-04-07 11:11:06,772 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.address.state'): Michigan
+2025-04-07 11:11:06,944 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.address.zipCode'): 858767
+2025-04-07 11:11:07,131 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.phoneNumber'): 9165897630
+2025-04-07 11:11:07,331 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.ssn'): 5254
+2025-04-07 11:11:07,527 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.username'): jennifer10329
+2025-04-07 11:11:07,692 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.password'): Test@123
+2025-04-07 11:11:07,837 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'repeatedPassword'): Test@123
+2025-04-07 11:11:08,369 - Register - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//input[@value='Register']")
+2025-04-07 11:11:09,579 - Register - INFO - Web_Utils.py:24 - Clicked element: ('link text', 'Log Out')
+2025-04-07 11:11:09,735 - Login - INFO - Web_Utils.py:43 - Entered text in element ('xpath', "//div[@class='login']/input[@name='username']"): jennifer10329
+2025-04-07 11:11:09,958 - Login - INFO - Web_Utils.py:43 - Entered text in element ('xpath', "//div[@class='login']/input[@name='password']"): Test@123
+2025-04-07 11:11:12,005 - Login - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//div[@class='login']/input[@value='Log In']")
+2025-04-07 11:11:13,998 - RequestLoan - INFO - Web_Utils.py:60 - Element ('xpath', "//h1[contains(text(),'Apply for a Loan')]") visibility: True
+2025-04-07 11:11:14,384 - RequestLoan - INFO - Request_Loan.py:38 - Navigate to the Request Loan page
+2025-04-07 11:11:14,527 - RequestLoan - INFO - Web_Utils.py:43 - Entered text in element ('id', 'amount'): 200
+2025-04-07 11:11:14,688 - RequestLoan - INFO - Web_Utils.py:43 - Entered text in element ('id', 'downPayment'): 50
+2025-04-07 11:11:14,834 - RequestLoan - INFO - Web_Utils.py:120 - Selected option with value '19560' from dropdown ('id', 'fromAccountId')
+2025-04-07 11:11:14,949 - RequestLoan - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//input[@value='Apply Now']")
+2025-04-07 11:11:18,021 - RequestLoan - INFO - Web_Utils.py:60 - Element ('xpath', "//h1[contains(text(),'Loan Request Processed')]") visibility: True
+2025-04-07 11:11:18,227 - RequestLoan - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//td[@id='loanProviderName']/parent::tr"): Loan Provider: Wealth Securities Dynamic Loans (WSDL)
+2025-04-07 11:11:18,275 - RequestLoan - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//td[@id='responseDate']/parent::tr"): Date: 04-7-2025
+2025-04-07 11:11:18,322 - RequestLoan - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//td[@id='loanStatus']/parent::tr"): Status: Approved
+2025-04-07 11:11:18,358 - RequestLoan - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'loanRequestApproved'): Congratulations, your loan has been approved.
+Your new account number: 19671
+2025-04-07 11:11:18,399 - RequestLoan - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'newAccountId'): 19671
+2025-04-07 11:11:18,457 - RequestLoan - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//a[@id='newAccountId']/parent::p"): Your new account number: 19671
