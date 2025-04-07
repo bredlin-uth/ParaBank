@@ -1,9 +1,14 @@
 import os
+import time
+
 import allure
 import pytest
 from allure_commons.types import AttachmentType
 from selenium import webdriver
 from selenium.common import InvalidArgumentException
+from selenium.webdriver.common.by import By
+
+from utils.Web_Utils import WebUtils
 
 # Custom pytest command-line option to specify the browser
 # Usage: pytest --browser chrome/firefox/edge
@@ -39,9 +44,14 @@ def setup_and_teardown(request):
 
     driver.maximize_window()
     driver.implicitly_wait(15)
-    base_url = 'https://parabank.parasoft.com/parabank/register.htm'
+    base_url = "https://parabank.parasoft.com/parabank/index.htm"
     driver.get(base_url)
-
+    # time.sleep(5)
+    # webutils = WebUtils(driver)
+    # webutils.enter_text_in_field((By.XPATH,"//input[@name='username']"),"MJ")
+    # webutils.enter_text_in_field((By.XPATH, "//input[@name='password']"), "MJ")
+    # webutils.click_on_element((By.XPATH, "//input[@value='Log In']"))
+    # time.sleep(5)
     request.cls.driver = driver  # Assign driver instance to the test class
     yield driver  # Provide the driver instance to the test
     driver.quit()

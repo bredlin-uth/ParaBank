@@ -1,5 +1,5 @@
 pytest
-selenium
+selenium==4.30.0
 pytest-html
 pytest-xdist
 openpyxl
