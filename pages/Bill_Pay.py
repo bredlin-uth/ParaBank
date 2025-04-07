@@ -1,3 +1,6 @@
+import inspect
+import time
+
 import allure
 from allure_commons.types import AttachmentType
 from selenium.webdriver.common.by import By
@@ -33,14 +36,18 @@ class BillPay(WebUtils):
         with allure.step("Navigate to the Bill Pay page"):
             status = self.is_element_visible(self.bill_payment_service_txt)
             if status:
-                allure.attach(self.driver.get_screenshot_as_png(), name="Bill Pay", attachment_type=AttachmentType.PNG)
                 self.logger.info("Navigate to the Bill Pay page")
             else:
-                allure.attach(self.driver.get_screenshot_as_png(), name="Bill Pay", attachment_type=AttachmentType.PNG)
+                # allure.attach(self.driver.get_screenshot_as_png(), name="Bill Pay", attachment_type=AttachmentType.PNG)
                 self.logger.error("Unable to navigate to the Bill Pay page")
         return status
 
-    def pay_bill(self, name, address, city, state, zipcode, phone, account, amount, from_account):
+    def __select_from_account__(self):
+        options = self.get_values_from_the_dropdown(self.from_account_dd)
+        self.select_by_value(self.from_account_dd, options[0])
+        return options[0]
+
+    def pay_bill(self, name, address, city, state, zipcode, phone, account, amount):
         self.enter_text_in_field(self.payee_name_tb, name)
         self.enter_text_in_field(self.address_tb, address)
         self.enter_text_in_field(self.city_tb, city)
@@ -50,20 +57,24 @@ class BillPay(WebUtils):
         self.enter_text_in_field(self.account_tb, account)
         self.enter_text_in_field(self.verify_account_tb, account)
         self.enter_text_in_field(self.amount_tb, amount)
+        from_account = self.__select_from_account__()
         self.select_by_visible_text(self.from_account_dd, from_account)
         self.click_on_element(self.send_payment_btn)
+        return from_account
 
     def verify_transfer_complete(self, name, amount, from_account):
-        if self.is_element_visible(self.bill_payment_complete_txt):
-            name_result = self.get_text_from_element(self.payee_name_txt)
-            amount_result = self.get_text_from_element(self.amount_txt)
-            from_account_result = self.get_text_from_element(self.from_account_id_txt)
-            transferred_success = self.get_text_from_element(self.bill_payment_success_msg)
-            allure.attach(transferred_success, name="Bill Pay", attachment_type=allure.attachment_type.TEXT)
-            if Common_Utils.compare_currency_with_number(amount_result, amount) and name_result == name and from_account_result == from_account:
-                return True
+        with allure.step(inspect.currentframe().f_code.co_name):
+            time.sleep(3)
+            if self.is_element_visible(self.bill_payment_complete_txt):
+                name_result = self.get_text_from_element(self.payee_name_txt)
+                amount_result = self.get_text_from_element(self.amount_txt)
+                from_account_result = self.get_text_from_element(self.from_account_id_txt)
+                transferred_success = self.get_text_from_element(self.bill_payment_success_msg)
+                with allure.step(transferred_success): pass
+                if Common_Utils.compare_currency_with_number(amount_result, amount) and name_result == name and from_account_result == from_account:
+                    return True
+                else:
+                    return False
             else:
                 return False
-        else:
-            return False
 
