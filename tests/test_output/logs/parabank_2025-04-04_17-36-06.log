@@ -1,0 +1,21 @@
+2025-04-04 17:36:11,554 - Register - INFO - Web_Utils.py:23 - Clicked element: ('link text', 'Register')
+2025-04-04 17:36:11,659 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.firstName'): Susan
+2025-04-04 17:36:11,726 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.lastName'): Brooks
+2025-04-04 17:36:11,802 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.address.street'): 695 Johnson Views
+2025-04-04 17:36:11,869 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.address.city'): Meganstad
+2025-04-04 17:36:11,936 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.address.state'): Louisiana
+2025-04-04 17:36:12,017 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.address.zipCode'): 202215
+2025-04-04 17:36:12,085 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.phoneNumber'): 6226968104
+2025-04-04 17:36:12,147 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.ssn'): 2843
+2025-04-04 17:36:12,243 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.username'): mark45999
+2025-04-04 17:36:12,318 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.password'): Test@123
+2025-04-04 17:36:12,383 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'repeatedPassword'): Test@123
+2025-04-04 17:36:12,808 - Register - INFO - Web_Utils.py:23 - Clicked element: ('xpath', "//input[@value='Register']")
+2025-04-04 17:36:15,863 - AccountServices - INFO - Web_Utils.py:54 - Element ('xpath', "//div[@id='rightPanel']") visibility: True
+2025-04-04 17:36:15,902 - AccountServices - INFO - Web_Utils.py:83 - Retrieved text from element ('xpath', "//div[@id='rightPanel']"): Welcome mark45999
+Your account was created successfully. You are now logged in.
+2025-04-04 17:36:15,934 - AccountServices - INFO - Web_Utils.py:83 - Retrieved text from element ('xpath', "//div[@id='rightPanel']/h1[@class='title']"): Welcome mark45999
+2025-04-04 17:36:16,845 - AccountServices - INFO - Web_Utils.py:23 - Clicked element: ('link text', 'Log Out')
+2025-04-04 17:36:17,031 - Login - INFO - Web_Utils.py:39 - Entered text in element ('xpath', "//div[@class='login']/input[@name='username']"): mark45999
+2025-04-04 17:36:17,233 - Login - INFO - Web_Utils.py:39 - Entered text in element ('xpath', "//div[@class='login']/input[@name='password']"): Test@123
+2025-04-04 17:36:18,649 - Login - INFO - Web_Utils.py:23 - Clicked element: ('xpath', "//div[@class='login']/input[@value='Log In']")

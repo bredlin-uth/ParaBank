@@ -1,0 +1,1 @@
+Selected option 'SAVINGS' from dropdown ('xpath', "//select[@id='type']")

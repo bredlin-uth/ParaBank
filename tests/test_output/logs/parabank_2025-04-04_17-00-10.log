@@ -1,0 +1,26 @@
+2025-04-04 17:00:17,511 - Register - INFO - Web_Utils.py:23 - Clicked element: ('link text', 'Register')
+2025-04-04 17:00:17,767 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.firstName'): Rebecca
+2025-04-04 17:00:17,961 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.lastName'): Gonzalez
+2025-04-04 17:00:18,048 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.address.street'): 8998 Torres Loaf Apt. 422
+2025-04-04 17:00:18,114 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.address.city'): North Ryan
+2025-04-04 17:00:18,181 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.address.state'): California
+2025-04-04 17:00:18,248 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.address.zipCode'): 476395
+2025-04-04 17:00:18,330 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.phoneNumber'): 7894291738
+2025-04-04 17:00:18,386 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.ssn'): 3238
+2025-04-04 17:00:18,484 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.username'): james76200
+2025-04-04 17:00:18,553 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.password'): Test@123
+2025-04-04 17:00:18,614 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'repeatedPassword'): Test@123
+2025-04-04 17:00:19,757 - Register - INFO - Web_Utils.py:23 - Clicked element: ('xpath', "//input[@value='Register']")
+2025-04-04 17:00:29,788 - AccountServices - INFO - Web_Utils.py:54 - Element ('xpath', "//p[@class='smallText']") visibility: True
+2025-04-04 17:00:29,836 - AccountServices - INFO - Web_Utils.py:83 - Retrieved text from element ('xpath', "//p[@class='smallText']"): Welcome Rebecca Gonzalez
+2025-04-04 17:00:29,867 - AccountServices - INFO - Web_Utils.py:83 - Retrieved text from element ('xpath', "//div[@id='rightPanel']/h1[@class='title']"): Welcome james76200
+2025-04-04 17:00:30,817 - AccountServices - INFO - Web_Utils.py:23 - Clicked element: ('link text', 'Log Out')
+2025-04-04 17:00:31,002 - Login - INFO - Web_Utils.py:39 - Entered text in element ('xpath', "//div[@class='login']/input[@name='username']"): james76200
+2025-04-04 17:00:31,196 - Login - INFO - Web_Utils.py:39 - Entered text in element ('xpath', "//div[@class='login']/input[@name='password']"): Test@123
+2025-04-04 17:00:33,158 - Login - INFO - Web_Utils.py:23 - Clicked element: ('xpath', "//div[@class='login']/input[@value='Log In']")
+2025-04-04 17:00:43,200 - AccountServices - INFO - Web_Utils.py:54 - Element ('xpath', "//div[@id='rightPanel']") visibility: True
+2025-04-04 17:00:43,229 - AccountServices - INFO - Web_Utils.py:83 - Retrieved text from element ('xpath', "//div[@id='rightPanel']"): Accounts Overview
+Account Balance* Available Amount
+23445 $1715.50 $1715.50
+Total $1715.50  
+*Balance includes deposits that may be subject to holds

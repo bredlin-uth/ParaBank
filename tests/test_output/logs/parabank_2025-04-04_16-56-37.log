@@ -1,0 +1,26 @@
+2025-04-04 16:56:44,364 - Register - INFO - Web_Utils.py:23 - Clicked element: ('link text', 'Register')
+2025-04-04 16:56:44,543 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.firstName'): Brett
+2025-04-04 16:56:44,624 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.lastName'): Benson
+2025-04-04 16:56:44,770 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.address.street'): 7625 Wilkinson Mountain
+2025-04-04 16:56:44,856 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.address.city'): South Megan
+2025-04-04 16:56:44,923 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.address.state'): Maine
+2025-04-04 16:56:44,973 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.address.zipCode'): 887870
+2025-04-04 16:56:45,108 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.phoneNumber'): 8394832341
+2025-04-04 16:56:45,226 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.ssn'): 7458
+2025-04-04 16:56:45,351 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.username'): james84357
+2025-04-04 16:56:45,499 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.password'): Test@123
+2025-04-04 16:56:45,606 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'repeatedPassword'): Test@123
+2025-04-04 16:56:46,035 - Register - INFO - Web_Utils.py:23 - Clicked element: ('xpath', "//input[@value='Register']")
+2025-04-04 16:56:56,081 - AccountServices - INFO - Web_Utils.py:54 - Element ('xpath', "//p[@class='smallText']") visibility: True
+2025-04-04 16:56:56,120 - AccountServices - INFO - Web_Utils.py:83 - Retrieved text from element ('xpath', "//p[@class='smallText']"): Welcome Brett Benson
+2025-04-04 16:56:57,787 - AccountServices - INFO - Web_Utils.py:23 - Clicked element: ('link text', 'Log Out')
+2025-04-04 16:56:57,997 - Login - INFO - Web_Utils.py:39 - Entered text in element ('xpath', "//div[@class='login']/input[@name='username']"): james84357
+2025-04-04 16:56:58,211 - Login - INFO - Web_Utils.py:39 - Entered text in element ('xpath', "//div[@class='login']/input[@name='password']"): Test@123
+2025-04-04 16:56:59,446 - Login - INFO - Web_Utils.py:23 - Clicked element: ('xpath', "//div[@class='login']/input[@value='Log In']")
+2025-04-04 16:57:09,479 - AccountServices - INFO - Web_Utils.py:54 - Element ('xpath', "//div[@id='rightPanel']") visibility: True
+2025-04-04 16:57:09,514 - AccountServices - INFO - Web_Utils.py:83 - Retrieved text from element ('xpath', "//div[@id='rightPanel']"): Accounts Overview
+Account Balance* Available Amount
+23223 $1715.50 $1715.50
+Total $1715.50  
+*Balance includes deposits that may be subject to holds
+2025-04-04 16:57:24,566 - AccountServices - ERROR - Web_Utils.py:86 - Text not found for element ('xpath', "//div[@id='rightPanel']/h1[@class='title']").

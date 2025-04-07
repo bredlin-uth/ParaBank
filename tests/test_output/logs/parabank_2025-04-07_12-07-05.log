@@ -1,0 +1,39 @@
+2025-04-07 12:07:10,507 - Register - INFO - Web_Utils.py:23 - Clicked element: ('link text', 'Register')
+2025-04-07 12:07:10,584 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.firstName'): Teresa
+2025-04-07 12:07:10,681 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.lastName'): Wilson
+2025-04-07 12:07:10,746 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.address.street'): 104 Larsen Meadows Suite 867
+2025-04-07 12:07:10,804 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.address.city'): Mcculloughland
+2025-04-07 12:07:10,858 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.address.state'): Oklahoma
+2025-04-07 12:07:10,908 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.address.zipCode'): 911337
+2025-04-07 12:07:10,961 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.phoneNumber'): 6258741231
+2025-04-07 12:07:11,010 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.ssn'): 9335
+2025-04-07 12:07:11,065 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.username'): jennifer24770
+2025-04-07 12:07:11,116 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.password'): Test@123
+2025-04-07 12:07:11,171 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'repeatedPassword'): Test@123
+2025-04-07 12:07:12,148 - Register - INFO - Web_Utils.py:23 - Clicked element: ('xpath', "//input[@value='Register']")
+2025-04-07 12:07:15,183 - AccountServices - INFO - Web_Utils.py:54 - Element ('xpath', "//div[@id='rightPanel']") visibility: True
+2025-04-07 12:07:15,199 - AccountServices - INFO - Web_Utils.py:83 - Retrieved text from element ('xpath', "//div[@id='rightPanel']"): Welcome jennifer24770
+Your account was created successfully. You are now logged in.
+2025-04-07 12:07:15,215 - AccountServices - INFO - Web_Utils.py:83 - Retrieved text from element ('xpath', "//div[@id='rightPanel']/h1[@class='title']"): Welcome jennifer24770
+2025-04-07 12:07:16,055 - AccountServices - INFO - Web_Utils.py:23 - Clicked element: ('link text', 'Log Out')
+2025-04-07 12:07:16,116 - Login - INFO - Web_Utils.py:39 - Entered text in element ('xpath', "//div[@class='login']/input[@name='username']"): jennifer24770
+2025-04-07 12:07:16,166 - Login - INFO - Web_Utils.py:39 - Entered text in element ('xpath', "//div[@class='login']/input[@name='password']"): Test@123
+2025-04-07 12:07:16,215 - Login - INFO - Web_Utils.py:23 - Clicked element: ('xpath', "//div[@class='login']/input[@value='Log In']")
+2025-04-07 12:07:19,237 - AccountServices - INFO - Web_Utils.py:54 - Element ('xpath', "//p[@class='smallText']") visibility: True
+2025-04-07 12:07:19,257 - AccountServices - INFO - Web_Utils.py:83 - Retrieved text from element ('xpath', "//p[@class='smallText']"): Welcome Teresa Wilson
+2025-04-07 12:07:19,794 - AccountServices - INFO - Web_Utils.py:23 - Clicked element: ('xpath', "//a[contains(text(),'Open New Account')]")
+2025-04-07 12:07:19,830 - OpenNewAccount - INFO - Web_Utils.py:99 - Selected option 'CHECKING' from dropdown ('xpath', "//select[@id='type']")
+2025-04-07 12:07:20,128 - OpenNewAccount - INFO - Web_Utils.py:125 - Selected option with index '0' from dropdown ('xpath', "//select[@id='fromAccountId']")
+2025-04-07 12:07:20,180 - OpenNewAccount - INFO - Web_Utils.py:23 - Clicked element: ('xpath', "//input[@value='Open New Account']")
+2025-04-07 12:07:25,204 - AccountServices - INFO - Web_Utils.py:54 - Element ('xpath', "//div[@id='openAccountResult']") visibility: True
+2025-04-07 12:07:25,220 - AccountServices - INFO - Web_Utils.py:83 - Retrieved text from element ('xpath', "//div[@id='openAccountResult']"): Account Opened!
+Congratulations, your account is now open.
+Your new account number: 21780
+2025-04-07 12:07:25,770 - AccountServices - INFO - Web_Utils.py:23 - Clicked element: ('xpath', "//a[contains(text(),'Open New Account')]")
+2025-04-07 12:07:25,814 - OpenNewAccount - INFO - Web_Utils.py:99 - Selected option 'SAVINGS' from dropdown ('xpath', "//select[@id='type']")
+2025-04-07 12:07:26,189 - OpenNewAccount - INFO - Web_Utils.py:125 - Selected option with index '0' from dropdown ('xpath', "//select[@id='fromAccountId']")
+2025-04-07 12:07:26,234 - OpenNewAccount - INFO - Web_Utils.py:23 - Clicked element: ('xpath', "//input[@value='Open New Account']")
+2025-04-07 12:07:31,250 - AccountServices - INFO - Web_Utils.py:54 - Element ('xpath', "//div[@id='openAccountResult']") visibility: True
+2025-04-07 12:07:31,266 - AccountServices - INFO - Web_Utils.py:83 - Retrieved text from element ('xpath', "//div[@id='openAccountResult']"): Account Opened!
+Congratulations, your account is now open.
+Your new account number: 21891

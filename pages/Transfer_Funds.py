@@ -1,12 +1,9 @@
 import re
-
 import allure
 from allure_commons.types import AttachmentType
 from selenium.webdriver.common.by import By
-
 from utils import Common_Utils
 from utils.Web_Utils import WebUtils
-
 
 class TransferFunds(WebUtils):
     def __init__(self, driver):

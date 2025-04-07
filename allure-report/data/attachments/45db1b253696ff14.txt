@@ -1,0 +1,1 @@
+Selected option with index '0' from dropdown ('xpath', "//select[@id='fromAccountId']")

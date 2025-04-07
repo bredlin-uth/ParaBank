@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.common.by import By
 
 from utils.Web_Utils import WebUtils
@@ -20,9 +21,8 @@ class Register(WebUtils):
     password = (By.ID, "customer.password")
     confirm = (By.ID, "repeatedPassword")
     register_button = (By.XPATH,"//input[@value='Register']")
-    log_out = (By.LINK_TEXT, "Log Out")
 
-    def register_info(self, fname, lname, address, city, state, zipcode, phone, ssn, uname, pwd, pwd1):
+    def registering_to_the_application(self, fname, lname, address, city, state, zipcode, phone, ssn, uname, pwd, pwd1):
         self.click_on_element(self.register_link)
         self.enter_text_in_field(self.first_name, fname)
         self.enter_text_in_field(self.last_name, lname)
@@ -36,7 +36,16 @@ class Register(WebUtils):
         self.enter_text_in_field(self.password, pwd)
         self.enter_text_in_field(self.confirm, pwd1)
         self.click_on_element(self.register_button)
-        self.click_on_element(self.log_out)
+
+        return fname,uname
+
+
+
+
+
+
+
+
 
 
 

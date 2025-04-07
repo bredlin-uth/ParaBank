@@ -1,0 +1,1 @@
+Clicked element: ('xpath', "//div[@class='login']/input[@value='Log In']")

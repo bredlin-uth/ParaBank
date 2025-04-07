@@ -1,0 +1,27 @@
+2025-04-04 17:34:42,545 - Register - INFO - Web_Utils.py:23 - Clicked element: ('link text', 'Register')
+2025-04-04 17:34:42,658 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.firstName'): Manuel
+2025-04-04 17:34:42,766 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.lastName'): Zamora
+2025-04-04 17:34:42,880 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.address.street'): 99624 Matthew Parkways Apt. 455
+2025-04-04 17:34:42,960 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.address.city'): Port Brandi
+2025-04-04 17:34:43,032 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.address.state'): Ohio
+2025-04-04 17:34:43,091 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.address.zipCode'): 196247
+2025-04-04 17:34:43,174 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.phoneNumber'): 6118553046
+2025-04-04 17:34:43,241 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.ssn'): 7266
+2025-04-04 17:34:43,327 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.username'): chelsea33888
+2025-04-04 17:34:43,391 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'customer.password'): Test@123
+2025-04-04 17:34:43,468 - Register - INFO - Web_Utils.py:39 - Entered text in element ('id', 'repeatedPassword'): Test@123
+2025-04-04 17:34:45,542 - Register - INFO - Web_Utils.py:23 - Clicked element: ('xpath', "//input[@value='Register']")
+2025-04-04 17:34:55,583 - AccountServices - INFO - Web_Utils.py:54 - Element ('xpath', "//div[@id='rightPanel']") visibility: True
+2025-04-04 17:34:55,637 - AccountServices - INFO - Web_Utils.py:83 - Retrieved text from element ('xpath', "//div[@id='rightPanel']"): Welcome chelsea33888
+Your account was created successfully. You are now logged in.
+2025-04-04 17:34:55,674 - AccountServices - INFO - Web_Utils.py:83 - Retrieved text from element ('xpath', "//div[@id='rightPanel']/h1[@class='title']"): Welcome chelsea33888
+2025-04-04 17:34:56,632 - AccountServices - INFO - Web_Utils.py:23 - Clicked element: ('link text', 'Log Out')
+2025-04-04 17:34:56,723 - Login - INFO - Web_Utils.py:39 - Entered text in element ('xpath', "//div[@class='login']/input[@name='username']"): chelsea33888
+2025-04-04 17:34:56,883 - Login - INFO - Web_Utils.py:39 - Entered text in element ('xpath', "//div[@class='login']/input[@name='password']"): Test@123
+2025-04-04 17:34:58,204 - Login - INFO - Web_Utils.py:23 - Clicked element: ('xpath', "//div[@class='login']/input[@value='Log In']")
+2025-04-04 17:35:21,135 - urllib3.connectionpool - WARNING - connectionpool.py:868 - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000133ECF15220>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/a67021d1b1fb8a685d0465854d56cc50/screenshot
+2025-04-04 17:35:25,255 - urllib3.connectionpool - WARNING - connectionpool.py:868 - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000133ECF17440>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/a67021d1b1fb8a685d0465854d56cc50/screenshot
+2025-04-04 17:35:29,308 - urllib3.connectionpool - WARNING - connectionpool.py:868 - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000133ECF16ED0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/a67021d1b1fb8a685d0465854d56cc50/screenshot
+2025-04-04 17:35:37,641 - urllib3.connectionpool - WARNING - connectionpool.py:868 - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000133ECF17C80>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/a67021d1b1fb8a685d0465854d56cc50
+2025-04-04 17:35:41,760 - urllib3.connectionpool - WARNING - connectionpool.py:868 - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000133ECF17A70>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/a67021d1b1fb8a685d0465854d56cc50
+2025-04-04 17:35:45,848 - urllib3.connectionpool - WARNING - connectionpool.py:868 - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000133ECF17DD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/a67021d1b1fb8a685d0465854d56cc50
