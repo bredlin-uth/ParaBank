@@ -4,3 +4,7 @@
 /.venv
 /tests/__pycache__
 /.idea
+/test_output
+/tests/test_output
+/allure-report
+/.pytest_cache

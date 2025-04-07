@@ -1,3 +1,6 @@
+import inspect
+import time
+
 import allure
 from allure_commons.types import AttachmentType
 from selenium.webdriver.common.by import By
@@ -32,36 +35,39 @@ class RequestLoan(WebUtils):
         with allure.step("Navigate to the Request Loan page"):
             status = self.is_element_visible(self.apply_for_a_loan_txt)
             if status:
-                allure.attach(self.driver.get_screenshot_as_png(), name="Request Loan", attachment_type=AttachmentType.PNG)
                 self.logger.info("Navigate to the Request Loan page")
             else:
-                allure.attach(self.driver.get_screenshot_as_png(), name="Request Loan",
-                              attachment_type=AttachmentType.PNG)
+                # allure.attach(self.driver.get_screenshot_as_png(), name="Request Loan", attachment_type=AttachmentType.PNG)
                 self.logger.error("Unable to navigate to the Request Loan page")
         return status
 
-    def request_loan(self, amount, down_payment, from_account):
+    def __select_from_account__(self):
+        from_options = self.get_values_from_the_dropdown(self.from_account_id_dd)
+        self.select_by_value(self.from_account_id_dd, from_options[0])
+        return from_options[0]
+
+    def request_loan(self, amount, down_payment):
         self.enter_text_in_field(self.loan_amount_tb, amount)
         self.enter_text_in_field(self.down_payment_tb, down_payment)
-        self.select_by_visible_text(self.from_account_id_dd, from_account)
+        from_account = self.__select_from_account__()
         self.click_on_element(self.apply_now_btn)
+        return from_account
 
-    def verify_transfer_complete(self, amount, from_account, to_account):
-        if self.is_element_visible(self.loan_request_processed_txt):
-            provider_info = self.get_text_from_element(self.loan_provider_info_txt)
-            date_info = self.get_text_from_element(self.loan_date_info_txt)
-            status_info = self.get_text_from_element(self.loan_status_info_txt)
-            transferred_success = self.get_text_from_element(self.loan_request_approved_txt)
-            allure.attach(provider_info, name="Request Loan", attachment_type=allure.attachment_type.TEXT)
-            allure.attach(date_info, name="Request Loan", attachment_type=allure.attachment_type.TEXT)
-            allure.attach(status_info, name="Request Loan", attachment_type=allure.attachment_type.TEXT)
-            allure.attach(transferred_success, name="Request Loan", attachment_type=allure.attachment_type.TEXT)
-            return True
-        else:
-            return False
+    def verify_loan_request_complete(self):
+        with allure.step(inspect.currentframe().f_code.co_name):
+            time.sleep(3)
+            if self.is_element_visible(self.loan_request_processed_txt):
+                provider_info = self.get_text_from_element(self.loan_provider_info_txt)
+                date_info = self.get_text_from_element(self.loan_date_info_txt)
+                status_info = self.get_text_from_element(self.loan_status_info_txt)
+                transferred_success = self.get_text_from_element(self.loan_request_approved_txt)
+                result = "\n".join([provider_info, date_info, status_info, transferred_success])
+                allure.attach(result, name="Request Loan", attachment_type=allure.attachment_type.TEXT)
+                return True
+            else:
+                return False
 
     def get_new_account_number(self):
         account_number = self.get_text_from_element(self.new_account_id_txt)
-        account_info = self.get_text_from_element(self.new_account_info_txt)
-        allure.attach(account_info, name="Request Loan", attachment_type=allure.attachment_type.TEXT)
+        # account_info = self.get_text_from_element(self.new_account_info_txt)
         return account_number
