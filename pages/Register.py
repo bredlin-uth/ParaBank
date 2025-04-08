@@ -21,7 +21,17 @@ class Register(WebUtils):
     password = (By.ID, "customer.password")
     confirm = (By.ID, "repeatedPassword")
     register_button = (By.XPATH,"//input[@value='Register']")
+    sign_up_text = (By.XPATH, "//h1[normalize-space()='Signing up is easy!']")
 
+    def verify_the_register_page(self):
+        with allure.step("Navigate to the Register page"):
+            status = self.is_element_visible(self.sign_up_text)
+            if status:
+                self.logger.info("Navigate to the Register page")
+            else:
+                # allure.attach(self.driver.get_screenshot_as_png(), name="Bill Pay", attachment_type=AttachmentType.PNG)
+                self.logger.error("Unable to navigate to the Register page")
+        return status
     def registering_to_the_application(self, fname, lname, address, city, state, zipcode, phone, ssn, uname, pwd, pwd1):
         self.click_on_element(self.register_link)
         self.enter_text_in_field(self.first_name, fname)
@@ -37,7 +47,7 @@ class Register(WebUtils):
         self.enter_text_in_field(self.confirm, pwd1)
         self.click_on_element(self.register_button)
 
-        return fname,uname
+        return fname, uname
 
 
 

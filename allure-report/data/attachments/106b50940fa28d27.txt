@@ -1,1 +1,0 @@
-Selected option 'CHECKING' from dropdown ('xpath', "//select[@id='type']")

@@ -2,7 +2,6 @@ import inspect
 import time
 
 import allure
-from allure_commons.types import AttachmentType
 from selenium.webdriver.common.by import By
 
 from utils import Common_Utils

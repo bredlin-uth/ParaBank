@@ -1,1 +1,0 @@
-Entered text: Test@123 in element ('xpath', "//div[@class='login']/input[@name='password']")

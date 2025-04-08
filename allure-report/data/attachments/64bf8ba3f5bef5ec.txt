@@ -1,1 +1,0 @@
-Clicked element: ('xpath', "//a[contains(text(),'Open New Account')]")
