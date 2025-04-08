@@ -1,1 +1,0 @@
-Clicked element: ('link text', 'Log Out')

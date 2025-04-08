@@ -8,7 +8,6 @@ from selenium.webdriver.common.by import By
 from utils import Common_Utils
 from utils.Web_Utils import WebUtils
 
-
 class TransferFunds(WebUtils):
     def __init__(self, driver):
         super().__init__(driver)
@@ -28,6 +27,10 @@ class TransferFunds(WebUtils):
     to_account_id_result_txt = (By.ID, "toAccountIdResult")
 
     def verify_the_transfer_funds_page(self):
+        """
+        Verify the Transfer Funds Page.
+        Returns True if the page is visible, else False.
+        """
         with allure.step("Navigate to the Transfer Funds page"):
             status = self.is_element_visible(self.transfer_funds_txt)
             if status:
@@ -38,6 +41,10 @@ class TransferFunds(WebUtils):
         return status
 
     def __select_from_and_to_account__(self):
+        """
+        Select from account and to account from the dropdown
+        Returns dict of from_account ant to_account.
+        """
         from_options = self.get_values_from_the_dropdown(self.from_account_dd)
         self.select_by_value(self.from_account_dd, from_options[0])
         to_options = self.get_values_from_the_dropdown(self.from_account_dd)
@@ -48,6 +55,10 @@ class TransferFunds(WebUtils):
         }
 
     def transfer_funds(self, amount):
+        """
+        Transfer funds.
+        Returns dict of from_account ant to_account.
+        """
         self.enter_text_in_field(self.amount_tb, amount)
         # self.select_by_visible_text(self.from_account_dd, from_account)
         # self.select_by_visible_text(self.to_account_dd, to_account)
@@ -56,6 +67,10 @@ class TransferFunds(WebUtils):
         return from_and_to_account
 
     def verify_transfer_complete(self, amount, from_account, to_account):
+        """
+        Verify the Transfer is completed.
+        Returns True if the verification is success, else False
+        """
         time.sleep(3)
         if self.is_element_visible(self.transfer_complete_txt):
             result_amount = self.get_text_from_element(self.amount_result_txt)

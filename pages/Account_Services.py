@@ -1,3 +1,5 @@
+import time
+
 import allure
 from selenium.webdriver.common.by import By
 from utils.Web_Utils import WebUtils
@@ -36,6 +38,7 @@ class AccountServices(WebUtils):
         self.click_on_element(self.log_out)
 
     def verify_account_is_logged_in(self, fname):
+        time.sleep(3)
         if self.is_element_visible(self.login_success):
             status_of_login = self.get_text_from_element(self.login_success)
             with allure.step(f" Verify the account is logged in {status_of_login} "):
@@ -46,7 +49,8 @@ class AccountServices(WebUtils):
                     return False
         return False
 
-    def verify_new_account_opening(self,type_of_account):
+    def verify_new_account_opening(self, type_of_account):
+        time.sleep(3)
         if self.is_element_visible(self.account_opened_success):
             status_of_account_opening = self.get_text_from_element(self.account_opened_success)
             with allure.step(f" Verify new {type_of_account} account is opened {status_of_account_opening} "):

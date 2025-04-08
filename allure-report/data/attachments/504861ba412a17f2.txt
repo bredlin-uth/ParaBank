@@ -1,1 +1,0 @@
-Entered text: 732266 in element ('id', 'customer.address.zipCode')

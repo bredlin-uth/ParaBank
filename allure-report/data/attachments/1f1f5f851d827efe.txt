@@ -1,1 +1,0 @@
-Clicked element: ('xpath', "//input[@value='Register']")

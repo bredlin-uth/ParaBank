@@ -10,7 +10,7 @@ from selenium.common import InvalidArgumentException
 def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="chrome", help="Browser to use for tests: chrome, firefox, edge")
 
-@pytest.fixture()
+@pytest.fixture(scope="class")
 def setup_and_teardown(request):
     """
     Fixture to initialize and tear down the WebDriver instance.

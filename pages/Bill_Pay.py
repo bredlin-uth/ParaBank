@@ -33,6 +33,10 @@ class BillPay(WebUtils):
     from_account_id_txt = (By.ID, "fromAccountId")
 
     def verify_the_transfer_funds_page(self):
+        """
+        Verify the Transfer Funds Page.
+        Returns True if the page is visible, else False.
+        """
         with allure.step("Navigate to the Bill Pay page"):
             status = self.is_element_visible(self.bill_payment_service_txt)
             if status:
@@ -43,11 +47,19 @@ class BillPay(WebUtils):
         return status
 
     def __select_from_account__(self):
+        """
+        Select from_account from the dropdown
+        Returns from_account
+        """
         options = self.get_values_from_the_dropdown(self.from_account_dd)
         self.select_by_value(self.from_account_dd, options[0])
         return options[0]
 
     def pay_bill(self, name, address, city, state, zipcode, phone, account, amount):
+        """
+        Pay Bill
+        Returns from_account
+        """
         self.enter_text_in_field(self.payee_name_tb, name)
         self.enter_text_in_field(self.address_tb, address)
         self.enter_text_in_field(self.city_tb, city)
@@ -63,6 +75,10 @@ class BillPay(WebUtils):
         return from_account
 
     def verify_transfer_complete(self, name, amount, from_account):
+        """
+        Verify the Transfer is completed.
+        Returns True if the verification is success, else False
+        """
         with allure.step(inspect.currentframe().f_code.co_name):
             time.sleep(3)
             if self.is_element_visible(self.bill_payment_complete_txt):

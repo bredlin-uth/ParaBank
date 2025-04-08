@@ -37,7 +37,7 @@ class Register(WebUtils):
         self.enter_text_in_field(self.confirm, pwd1)
         self.click_on_element(self.register_button)
 
-        return fname,uname
+        return fname, uname
 
 
 
