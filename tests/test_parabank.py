@@ -1,3 +1,4 @@
+from datetime import datetime
 import time
 
 import allure
@@ -13,8 +14,14 @@ from pages.Request_Loan import RequestLoan
 from pages.Transfer_Funds import TransferFunds
 from utils.Common_Utils import *
 
+from pages.Find_Transactions import FindTransactions
+from pages.Update_Contact_Info import UpdateContactInfo
+
 @pytest.mark.usefixtures("setup_and_teardown", "screenshot_on_failure")
 class Test_Para_Bank:
+    user_data = {}
+    transaction_id = None
+    transaction_amount = None
     user_data = {}
 
     def test_register(self):
@@ -110,3 +117,47 @@ class Test_Para_Bank:
             account_overview_page.verify_the_transaction_details("Down Payment for Loan", "Debit", down_payment)
             loan_transaction_id = account_overview_page.get_the_transaction_id()
             loan_transaction_date = account_overview_page.get_the_transaction_date()
+
+    def test_find_transaction_date(self):
+        global transaction_id, transaction_amount
+        findtransactions = FindTransactions(self.driver)
+        transaction_date = datetime.now().strftime("%m-%d-%Y")
+        transaction_id_text, transaction_amount_text = findtransactions.find_transaction_in_multiple_ways(
+            find_transaction_value="find_transaction_date", transaction_values=transaction_date)
+        transaction_id = transaction_id_text
+        transaction_amount = transaction_amount_text
+
+    def test_find_transaction_id(self):
+        global transaction_id, transaction_amount
+        findtransactions = FindTransactions(self.driver)
+        if transaction_id:
+            findtransactions.find_transaction_in_multiple_ways(find_transaction_value="find_transaction_id",
+                                                               transaction_values=transaction_id)
+        else:
+            raise ValueError(f"Give the Transaction ID")
+
+    def test_find_transaction_daterange(self):
+        global transaction_id, transaction_amount
+        findtransactions = FindTransactions(self.driver)
+        transaction_date = datetime.now().strftime("%m-%d-%Y")
+        transaction_daterange_2value_list = (transaction_date, transaction_date)
+        findtransactions.find_transaction_in_multiple_ways(find_transaction_value="find_transaction_daterange",
+                                                           transaction_values=transaction_daterange_2value_list)
+
+    def test_find_transaction_amount(self):
+        global transaction_id, transaction_amount
+        findtransactions = FindTransactions(self.driver)
+        if transaction_amount:
+            findtransactions.find_transaction_in_multiple_ways(find_transaction_value="find_transaction_amount",
+                                                               transaction_values=transaction_amount)
+        else:
+            raise ValueError(f"Give the Transaction Amount")
+
+    def test_update_contact_info(self):
+        update_user_data = generate_random_user_for_registration()
+        updatecontactinfo = UpdateContactInfo(self.driver)
+        fristname, lastname, streetaddress, cityaddress, stateaddress, zipcodeaddress, phonenumber = \
+        update_user_data['fname'], update_user_data['lname'], update_user_data['address'], update_user_data['city'], \
+        update_user_data['state'], update_user_data['zipcode'], update_user_data['phone']
+        updatecontactinfo.Update_Contact_Info(fristname, lastname, streetaddress, cityaddress, stateaddress,
+                                              zipcodeaddress, phonenumber)
