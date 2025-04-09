@@ -24,6 +24,10 @@ class Register(WebUtils):
     sign_up_text = (By.XPATH, "//h1[normalize-space()='Signing up is easy!']")
 
     def verify_the_register_page(self):
+        """
+        Verify the Register Page.
+        Returns True if the page is visible, else False.
+        """
         with allure.step("Navigate to the Register page"):
             status = self.is_element_visible(self.sign_up_text)
             if status:
@@ -33,7 +37,12 @@ class Register(WebUtils):
                 self.logger.error("Unable to navigate to the Register page")
         return status
     def registering_to_the_application(self, fname, lname, address, city, state, zipcode, phone, ssn, uname, pwd, pwd1):
+        """
+        Fills in the user details and submits the registration form
+        Returns first name and user name used during registration
+        """
         self.click_on_element(self.register_link)
+        self.verify_the_register_page()
         self.enter_text_in_field(self.first_name, fname)
         self.enter_text_in_field(self.last_name, lname)
         self.enter_text_in_field(self.address, address)
@@ -45,6 +54,7 @@ class Register(WebUtils):
         self.enter_text_in_field(self.username, uname)
         self.enter_text_in_field(self.password, pwd)
         self.enter_text_in_field(self.confirm, pwd1)
+        allure.attach(self.driver.get_screenshot_as_png(), name="Form Filled: Registration", attachment_type=allure.attachment_type.PNG)
         self.click_on_element(self.register_button)
 
         return fname, uname
