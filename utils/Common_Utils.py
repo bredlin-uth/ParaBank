@@ -5,8 +5,12 @@ from faker import Faker
 
 fake = Faker()
 
-#Generate random user details for registration
+
 def generate_random_user_for_registration():
+    """
+    Generate random user details for registration.
+    Returns Random user details for registration.
+    """
     name = fake.first_name().lower()
     number = random.randint(10000, 99999)
 
@@ -24,8 +28,11 @@ def generate_random_user_for_registration():
         'pwd1': "Test@123",
     }
 
-    # Generate random user details for registration
 def generate_random_details_for_pay_bill(amount):
+    """
+    Generate random user details for pay bill.
+    Returns Random user details for pay bill.
+    """
     return {
         'name': fake.first_name(),
         'address': fake.street_address(),
@@ -49,3 +56,14 @@ def compare_currency_with_number(value1, value2):
 
     return round(normalize(value1), 2) == round(normalize(value2), 2)
 
+def convert_to_float_2dp(value):
+    """
+    Converts an int to a float with 2 decimal points as a string.
+    If value is already a float, return it as a string with 2 decimal places.
+    """
+    if isinstance(value, int):
+        return f"{float(value):.2f}"
+    elif isinstance(value, float):
+        return f"{value:.2f}"
+    else:
+        raise ValueError("Input must be an int or float.")

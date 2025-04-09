@@ -15,7 +15,7 @@ from utils.Web_Utils import WebUtils
 def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="chrome", help="Browser to use for tests: chrome, firefox, edge")
 
-@pytest.fixture()
+@pytest.fixture(scope="class")
 def setup_and_teardown(request):
     """
     Fixture to initialize and tear down the WebDriver instance.
@@ -46,12 +46,6 @@ def setup_and_teardown(request):
     driver.implicitly_wait(15)
     base_url = "https://parabank.parasoft.com/parabank/index.htm"
     driver.get(base_url)
-    # time.sleep(5)
-    # webutils = WebUtils(driver)
-    # webutils.enter_text_in_field((By.XPATH,"//input[@name='username']"),"MJ")
-    # webutils.enter_text_in_field((By.XPATH, "//input[@name='password']"), "MJ")
-    # webutils.click_on_element((By.XPATH, "//input[@value='Log In']"))
-    # time.sleep(5)
     request.cls.driver = driver  # Assign driver instance to the test class
     yield driver  # Provide the driver instance to the test
     driver.quit()

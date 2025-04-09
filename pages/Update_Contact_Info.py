@@ -10,18 +10,19 @@ class UpdateContactInfo(WebUtils):
         super().__init__(driver)
         self.driver = driver
 
-        self.Update_Contact_Info_linktext = (By.LINK_TEXT, "Update Contact Info")
-        self.update_profile_firstname = (By.ID,"customer.firstName")
-        self.update_profile_lastname = (By.ID,"customer.lastName")
-        self.update_profile_address_street = (By.ID,"customer.address.street")
-        self.update_profile_address_city = (By.ID,"customer.address.city")
-        self.update_profile_address_state = (By.ID,"customer.address.state")
-        self.update_profile_address_zipcode = (By.ID,"customer.address.zipCode")
-        self.update_profile_phonenumber = (By.ID,"customer.phoneNumber")
-        self.update_profile_btn = (By.XPATH,"//input[@value='Update Profile']")
-        self.Profile_Updated = (By.XPATH,"//h1[normalize-space()='Profile Updated']")
+    Update_Contact_Info_linktext = (By.LINK_TEXT, "Update Contact Info")
+    update_profile_firstname = (By.ID,"customer.firstName")
+    update_profile_lastname = (By.ID,"customer.lastName")
+    update_profile_address_street = (By.ID,"customer.address.street")
+    update_profile_address_city = (By.ID,"customer.address.city")
+    update_profile_address_state = (By.ID,"customer.address.state")
+    update_profile_address_zipcode = (By.ID,"customer.address.zipCode")
+    update_profile_phonenumber = (By.ID,"customer.phoneNumber")
+    update_profile_btn = (By.XPATH,"//input[@value='Update Profile']")
+    Profile_Updated = (By.XPATH,"//h1[normalize-space()='Profile Updated']")
 
     def Update_Contact_Info(self,fristname,lastname,streetaddress,cityaddress,stateaddress,zipcodeaddress,phonenumber):
+        """Update the user detail"""
         with allure.step("Update Contact Info"):
             self.click_on_Update_Contact_Info()
             self.enter_fristname_update_profile(fristname)
@@ -33,6 +34,7 @@ class UpdateContactInfo(WebUtils):
             self.enter_phonenumber_update_profile(phonenumber)
             self.click_on_Update_profile_btn()
             self.verify_profile_is_updated()
+
     def click_on_Update_Contact_Info(self):
         with allure.step(str("click_on_Update_Contact_Info").replace("_", " ")):
             self.click_on_element(self.Update_Contact_Info_linktext)
@@ -70,6 +72,7 @@ class UpdateContactInfo(WebUtils):
             self.click_on_element(self.update_profile_btn)
 
     def verify_profile_is_updated(self):
+        """verifying the user detail are updated by using Profile Updated keyword is displaying"""
         with allure.step(str("verify_profile_is_updated").replace("_", " ")):
             if self.wait_until_element_is_visible(self.Profile_Updated):
                 with allure.step(f"Profile Updated"):

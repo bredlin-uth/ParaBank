@@ -13,28 +13,29 @@ class FindTransactions(WebUtils):
         self.transaction_id_text = None
         self.transaction_amount_text = None
 
-        self.find_transaction_linktext = (By.LINK_TEXT,"Find Transactions")
-        self.find_transaction_by_id = (By.ID,"transactionId")
-        self.find_transaction_by_id_btn = (By.ID,"findById")
+    find_transaction_linktext = (By.LINK_TEXT,"Find Transactions")
+    find_transaction_by_id = (By.ID,"transactionId")
+    find_transaction_by_id_btn = (By.ID,"findById")
 
-        self.find_transaction_date_id = (By.ID,"transactionDate")
-        self.find_transaction_date_id_btn = (By.ID,"findByDate")
+    find_transaction_date_id = (By.ID,"transactionDate")
+    find_transaction_date_id_btn = (By.ID,"findByDate")
 
-        self.find_transaction_daterange_between_id = (By.ID,"fromDate")
-        self.find_transaction_daterange_to_id = (By.ID,"toDate")
-        self.find_transaction_daterange_id_btn = (By.ID,"findByDateRange")
+    find_transaction_daterange_between_id = (By.ID,"fromDate")
+    find_transaction_daterange_to_id = (By.ID,"toDate")
+    find_transaction_daterange_id_btn = (By.ID,"findByDateRange")
 
-        self.find_transaction_amount_id = (By.ID,"amount")
-        self.find_transaction_amount_id_btn = (By.ID,"findByAmount")
+    find_transaction_amount_id = (By.ID,"amount")
+    find_transaction_amount_id_btn = (By.ID,"findByAmount")
 
-        self.find_transaction_table_id = (By.ID,"transactionTable")
+    find_transaction_table_id = (By.ID,"transactionTable")
 
-        self.find_transaction_error_xpath = (By.XPATH,"//p[@class='error']")
+    find_transaction_error_xpath = (By.XPATH,"//p[@class='error']")
 
-        self.funds_transfer =(By.XPATH,"//a[contains(text(),'Funds Transfer Sent') or contains(text(),'Funds Transfer Received')]")
+    funds_transfer =(By.XPATH,"//a[contains(text(),'Funds Transfer Sent') or contains(text(),'Funds Transfer Received')]")
 
-        self.transaction_id_text_xpath = (By.XPATH,"//b[normalize-space()='Transaction ID:']/parent::td/following-sibling::td")
-        self.transaction_amount_text_xpath = (By.XPATH,"//b[normalize-space()= 'Amount:']/parent::td/following-sibling::td")
+    transaction_id_text_xpath = (By.XPATH,"//b[normalize-space()='Transaction ID:']/parent::td/following-sibling::td")
+    transaction_amount_text_xpath = (By.XPATH,"//b[normalize-space()= 'Amount:']/parent::td/following-sibling::td")
+
     def find_transaction_in_multiple_ways(self,find_transaction_value,transaction_values):
         try:
             with allure.step(str(find_transaction_value).replace("_"," ")):
