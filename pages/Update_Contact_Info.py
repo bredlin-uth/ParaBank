@@ -1,8 +1,9 @@
+import time
+
 import allure
+import pytest
 from selenium.webdriver.common.by import By
-
 from utils.Web_Utils import WebUtils
-
 
 class UpdateContactInfo(WebUtils):
 
@@ -20,6 +21,7 @@ class UpdateContactInfo(WebUtils):
     update_profile_phonenumber = (By.ID,"customer.phoneNumber")
     update_profile_btn = (By.XPATH,"//input[@value='Update Profile']")
     Profile_Updated = (By.XPATH,"//h1[normalize-space()='Profile Updated']")
+    update_profile_error_xpath = (By.XPATH, "//p[@class='error']")
 
     def Update_Contact_Info(self,fristname,lastname,streetaddress,cityaddress,stateaddress,zipcodeaddress,phonenumber):
         """Update the user detail"""
@@ -31,7 +33,9 @@ class UpdateContactInfo(WebUtils):
             self.enter_address_city_update_profile(cityaddress)
             self.enter_address_state_update_profile(stateaddress)
             self.enter_address_zipcode_update_profile(zipcodeaddress)
+            time.sleep(3)
             self.enter_phonenumber_update_profile(phonenumber)
+            time.sleep(5)
             self.click_on_Update_profile_btn()
             self.verify_profile_is_updated()
 
@@ -77,3 +81,9 @@ class UpdateContactInfo(WebUtils):
             if self.wait_until_element_is_visible(self.Profile_Updated):
                 with allure.step(f"Profile Updated"):
                     allure.attach(self.driver.get_screenshot_as_png(), name=f"Profile Updated",attachment_type=allure.attachment_type.PNG)
+            elif self.wait_until_element_is_visible(self.update_profile_error_xpath):
+                error_text = self.get_text_from_element(self.update_profile_error_xpath)
+                self.logger.error(f"{error_text}")
+                with allure.step(f"ERROR: {error_text}"):
+                    allure.attach(self.driver.get_screenshot_as_png(), name=f"{error_text}",attachment_type=allure.attachment_type.PNG)
+                    pytest.fail(f"{error_text}")

@@ -22,7 +22,6 @@ class Test_Para_Bank:
     user_data = {}
     transaction_id = None
     transaction_amount = None
-    user_data = {}
 
     def test_register(self):
         global user_data
@@ -131,8 +130,7 @@ class Test_Para_Bank:
         global transaction_id, transaction_amount
         findtransactions = FindTransactions(self.driver)
         if transaction_id:
-            findtransactions.find_transaction_in_multiple_ways(find_transaction_value="find_transaction_id",
-                                                               transaction_values=transaction_id)
+            findtransactions.find_transaction_in_multiple_ways(find_transaction_value="find_transaction_id",transaction_values=transaction_id)
         else:
             raise ValueError(f"Give the Transaction ID")
 
@@ -141,15 +139,13 @@ class Test_Para_Bank:
         findtransactions = FindTransactions(self.driver)
         transaction_date = datetime.now().strftime("%m-%d-%Y")
         transaction_daterange_2value_list = (transaction_date, transaction_date)
-        findtransactions.find_transaction_in_multiple_ways(find_transaction_value="find_transaction_daterange",
-                                                           transaction_values=transaction_daterange_2value_list)
+        findtransactions.find_transaction_in_multiple_ways(find_transaction_value="find_transaction_daterange",transaction_values=transaction_daterange_2value_list)
 
     def test_find_transaction_amount(self):
         global transaction_id, transaction_amount
         findtransactions = FindTransactions(self.driver)
         if transaction_amount:
-            findtransactions.find_transaction_in_multiple_ways(find_transaction_value="find_transaction_amount",
-                                                               transaction_values=transaction_amount)
+            findtransactions.find_transaction_in_multiple_ways(find_transaction_value="find_transaction_amount", transaction_values=transaction_amount)
         else:
             raise ValueError(f"Give the Transaction Amount")
 
@@ -159,5 +155,4 @@ class Test_Para_Bank:
         fristname, lastname, streetaddress, cityaddress, stateaddress, zipcodeaddress, phonenumber = \
         update_user_data['fname'], update_user_data['lname'], update_user_data['address'], update_user_data['city'], \
         update_user_data['state'], update_user_data['zipcode'], update_user_data['phone']
-        updatecontactinfo.Update_Contact_Info(fristname, lastname, streetaddress, cityaddress, stateaddress,
-                                              zipcodeaddress, phonenumber)
+        updatecontactinfo.Update_Contact_Info(fristname, lastname, streetaddress, cityaddress, stateaddress,zipcodeaddress, phonenumber)
