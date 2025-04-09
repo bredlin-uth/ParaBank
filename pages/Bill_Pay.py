@@ -71,6 +71,7 @@ class BillPay(WebUtils):
         self.enter_text_in_field(self.amount_tb, amount)
         from_account = self.__select_from_account__()
         self.select_by_visible_text(self.from_account_dd, from_account)
+        allure.attach(self.driver.get_screenshot_as_png(), name="Form Filled: Bill Pay", attachment_type=AttachmentType.PNG)
         self.click_on_element(self.send_payment_btn)
         return from_account
 

@@ -61,6 +61,7 @@ class RequestLoan(WebUtils):
         self.enter_text_in_field(self.loan_amount_tb, amount)
         self.enter_text_in_field(self.down_payment_tb, down_payment)
         from_account = self.__select_from_account__()
+        allure.attach(self.driver.get_screenshot_as_png(), name="Form Fill: Request Loan", attachment_type=AttachmentType.PNG)
         self.click_on_element(self.apply_now_btn)
         return from_account
 

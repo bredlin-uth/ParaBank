@@ -63,6 +63,7 @@ class TransferFunds(WebUtils):
         # self.select_by_visible_text(self.from_account_dd, from_account)
         # self.select_by_visible_text(self.to_account_dd, to_account)
         from_and_to_account = self.__select_from_and_to_account__()
+        allure.attach(self.driver.get_screenshot_as_png(), name="Form Filled: Transfer Funds", attachment_type=AttachmentType.PNG)
         self.click_on_element(self.transfer_btn)
         return from_and_to_account
 
