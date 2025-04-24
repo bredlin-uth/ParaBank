@@ -1,4 +1,3 @@
-/reports
 /logs
 /venv
 /.venv
@@ -10,3 +9,4 @@
 /.pytest_cache
 /allure-report
 /allure-result
+/reports/allure-result/*
