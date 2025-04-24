@@ -18,8 +18,8 @@ def setup_and_teardown(request):
     - Initializes the WebDriver based on the selected browser.
     - Maximizes the browser window and sets an implicit wait.
     - Opens the URL.
-    - Yields control to the test.
-    - Closes the WebDriver after the test execution.
+    - Yields control to the test.txt.
+    - Closes the WebDriver after the test.txt execution.
     """
     browser = request.config.getoption("--browser").lower()
     driver = None
@@ -42,16 +42,16 @@ def setup_and_teardown(request):
     base_url = 'https://parabank.parasoft.com/parabank/register.htm'
     driver.get(base_url)
 
-    request.cls.driver = driver  # Assign driver instance to the test class
-    yield driver  # Provide the driver instance to the test
+    request.cls.driver = driver  # Assign driver instance to the test.txt class
+    yield driver  # Provide the driver instance to the test.txt
     driver.quit()
 
 @pytest.fixture()
 def screenshot_on_failure(request):
     """
-    Fixture to capture a screenshot if a test fails.
-    - Executes after the test.
-    - If the test fails, captures a screenshot and attaches it to the Allure report.
+    Fixture to capture a screenshot if a test.txt fails.
+    - Executes after the test.txt.
+    - If the test.txt fails, captures a screenshot and attaches it to the Allure report.
     """
     yield
     if request.node.rep_call.failed:
@@ -62,9 +62,9 @@ def screenshot_on_failure(request):
 @pytest.hookimpl(hookwrapper=True, tryfirst=True)
 def pytest_runtest_makereport(item, call):
     """
-    Pytest hook to generate test reports.
-    - Captures the test result (pass/fail/skip) and attaches it to the test item.
-    - Enables checking test status within fixtures.
+    Pytest hook to generate test.txt reports.
+    - Captures the test.txt result (pass/fail/skip) and attaches it to the test.txt item.
+    - Enables checking test.txt status within fixtures.
     """
     outcome = yield
     rep = outcome.get_result()
