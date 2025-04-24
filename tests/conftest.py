@@ -4,6 +4,11 @@ import pytest
 from allure_commons.types import AttachmentType
 from selenium import webdriver
 from selenium.common import InvalidArgumentException
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
+
+
 
 # Custom pytest command-line option to specify the browser
 # Usage: pytest --browser chrome/firefox/edge
@@ -27,13 +32,13 @@ def setup_and_teardown(request):
     if browser == "chrome":
         options = webdriver.ChromeOptions()
         options.add_experimental_option('detach', True)
-        driver = webdriver.Chrome(options=options)
+        driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
     elif browser == "edge":
         options = webdriver.EdgeOptions()
-        driver = webdriver.Edge(options=options)
+        driver = webdriver.Edge(EdgeChromiumDriverManager().install(), options=options)
     elif browser == "firefox":
         options = webdriver.FirefoxOptions()
-        driver = webdriver.Firefox(options=options)
+        driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), options=options)
     else:
         raise InvalidArgumentException(f"Invalid browser selection: {browser}")
 
