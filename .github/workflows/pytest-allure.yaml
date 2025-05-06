@@ -33,19 +33,19 @@ jobs:
           $reportPath = "html-report/report_$timestamp.html"
 
       - name: Upload pytest-html Report as Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: pytest-html-report
           path: $reportPath
 
       - name: Upload Test Logs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: test-logs
           path: logs/parabank_$timestamp.log
 
       - name: Upload Allure Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: allure-results
           path: allure-result
@@ -58,7 +58,7 @@ jobs:
           gh_pages: gh-pages
 
       - name: Upload Allure Report as Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: allure-report
           path: allure-report
