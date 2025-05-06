@@ -7,3 +7,4 @@ allure-pytest
 pandas
 webdriver_manager
 python-dotenv
+faker
