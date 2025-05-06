@@ -1,0 +1,66 @@
+name: Pytest with Allure Report
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  run-tests:
+    runs-on: windows-latest  # Using Windows runner to match your Jenkins environment
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12.4'
+
+      - name: Create Virtual Environment & Install Dependencies
+        run: |
+          python -m venv venv
+          .\venv\Scripts\activate
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Tests with Allure
+        run: |
+          .\venv\Scripts\activate
+          pytest -v -s ./tests/test_parabank.py --alluredir=allure-result
+          $timestamp = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
+          $reportPath = "html-report/report_$timestamp.html"
+
+      - name: Upload pytest-html Report as Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: pytest-html-report
+          path: $reportPath
+
+      - name: Upload Test Logs
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-logs
+          path: logs/parabank_$timestamp.log
+
+      - name: Upload Allure Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-results
+          path: allure-result
+
+      - name: Generate and Publish Allure Report
+        uses: simple-elf/allure-report-action@master
+        with:
+          allure_results: allure-result
+          allure_report: allure-report
+          gh_pages: gh-pages
+
+      - name: Upload Allure Report as Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-report
+          path: allure-report
+
+

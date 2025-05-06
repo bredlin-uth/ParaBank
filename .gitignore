@@ -10,3 +10,5 @@
 /allure-report
 /allure-result
 /reports/allure-result/*
+/test-data
+/html-report

@@ -17,7 +17,7 @@ from utils.Common_Utils import *
 from pages.Find_Transactions import FindTransactions
 from pages.Update_Contact_Info import UpdateContactInfo
 
-@pytest.mark.usefixtures("setup_and_teardown", "screenshot_on_failure")
+@pytest.mark.usefixtures("setup_and_teardown")
 class Test_Para_Bank:
     user_data = {}
     transaction_id = None

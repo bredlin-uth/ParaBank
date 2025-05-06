@@ -5,3 +5,5 @@ pytest-xdist
 openpyxl
 allure-pytest
 pandas
+webdriver_manager
+python-dotenv

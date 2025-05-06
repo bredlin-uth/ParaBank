@@ -1,4 +1,5 @@
 import inspect
+import logging
 import time
 
 import allure

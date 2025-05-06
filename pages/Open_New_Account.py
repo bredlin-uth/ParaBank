@@ -1,4 +1,5 @@
 import inspect
+import logging
 import time
 import allure
 from selenium.webdriver.common.by import By
@@ -7,7 +8,7 @@ from utils.Web_Utils import WebUtils
 class OpenNewAccount(WebUtils):
     def __init__(self, driver):
         super().__init__(driver)
-        #self.driver = driver
+        # self.driver = driver
 
     type_of_account_dd = (By.XPATH, "//select[@id='type']")
     from_account_dd = (By.XPATH, "//select[@id='fromAccountId']")
