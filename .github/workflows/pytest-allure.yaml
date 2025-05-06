@@ -26,52 +26,49 @@ jobs:
         pip install -r requirements.txt
         pip install pytest pytest-html allure-pytest selenium webdriver-manager
 
-    - name: Install Chrome & ChromeDriver
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y wget unzip
-        wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-        echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
-        sudo apt-get update
-        sudo apt-get install -y google-chrome-stable
-        CHROME_VERSION=$(google-chrome --version | awk '{print $3}' | cut -d '.' -f 1)
-        CHROME_DRIVER_VERSION=$(wget -q -O - "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
-        wget -N https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip
-        unzip chromedriver_linux64.zip
-        sudo mv chromedriver /usr/local/bin/chromedriver
-        sudo chmod +x /usr/local/bin/chromedriver
-        rm chromedriver_linux64.zip
+#    - name: Install Chrome & ChromeDriver
+#      run: |
+#        sudo apt-get update
+#        sudo apt-get install -y wget unzip
+#        wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+#        echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+#        sudo apt-get update
+#        sudo apt-get install -y google-chrome-stable
+#        CHROME_VERSION=$(google-chrome --version | awk '{print $3}' | cut -d '.' -f 1)
+#        CHROME_DRIVER_VERSION=$(wget -q -O - "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
+#        wget -N https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip
+#        unzip chromedriver_linux64.zip
+#        sudo mv chromedriver /usr/local/bin/chromedriver
+#        sudo chmod +x /usr/local/bin/chromedriver
+#        rm chromedriver_linux64.zip
 
     - name: Run tests with timestamped reports
       run: |
-        mkdir -p reports
-        TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
-        pytest tests/ \
-          --html=reports/report_${TIMESTAMP}.html \
-          --self-contained-html \
-          --alluredir=reports/allure-results \
-          -v
+        mkdir -p allure-result
+        mkdir -p allure-report
+        mkdir -p html-report
+        pytest -v --alluredir=./allure-result --clean-alluredir
 
     - name: Upload pytest-html report
       uses: actions/upload-artifact@v4
       with:
         name: pytest-html-report
-        path: reports/report_*.html
+        path: html-report/report_*.html
 
     - name: Generate Allure report
       if: always()
       run: |
-        allure generate reports/allure-results -o reports/allure-report --clean
+        allure generate "./allure-result" -o "./allure-report" --clean
 
     - name: Upload Allure report
       uses: actions/upload-artifact@v4
       with:
         name: allure-report
-        path: reports/allure-report
+        path: ./allure-report
 
     - name: Deploy Allure report to GitHub Pages
       if: github.ref == 'refs/heads/main'
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: reports/allure-report
+        publish_dir: ./allure-report
