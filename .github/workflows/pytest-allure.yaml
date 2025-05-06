@@ -53,7 +53,7 @@ jobs:
           -v
 
     - name: Upload pytest-html report
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: pytest-html-report
         path: reports/report_*.html
@@ -64,7 +64,7 @@ jobs:
         allure generate reports/allure-results -o reports/allure-report --clean
 
     - name: Upload Allure report
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: allure-report
         path: reports/allure-report
