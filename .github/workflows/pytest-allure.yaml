@@ -1,76 +1,77 @@
-name: Pytest Automation with Allure and HTML Reports
+name: ParaBank Test Automation
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
-  workflow_dispatch:
+    branches: [ main ]
 
 jobs:
   test:
-    runs-on: windows-latest
-
-    env:
-      PYTHON_VERSION: '3.12.4'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      - name: Set up Python ${{ env.PYTHON_VERSION }}
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
+    - name: Set up Python 3.12.4
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12.4'
 
-      - name: Create Virtual Environment
-        run: |
-          python -m venv venv
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest pytest-html allure-pytest selenium webdriver-manager
 
-      - name: Activate Virtual Env and Install Dependencies
-        run: |
-          .\venv\Scripts\activate
-          pip install -r requirements.txt
-        shell: pwsh
+    - name: Install Chrome & ChromeDriver
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y wget unzip
+        wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+        echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable
+        CHROME_VERSION=$(google-chrome --version | awk '{print $3}' | cut -d '.' -f 1)
+        CHROME_DRIVER_VERSION=$(wget -q -O - "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
+        wget -N https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip
+        unzip chromedriver_linux64.zip
+        sudo mv chromedriver /usr/local/bin/chromedriver
+        sudo chmod +x /usr/local/bin/chromedriver
+        rm chromedriver_linux64.zip
 
-      - name: Prepare Directories
-        run: |
-          mkdir reports
-          mkdir logs
-          mkdir pytest-html
-        shell: pwsh
+    - name: Run tests with timestamped reports
+      run: |
+        mkdir -p reports
+        TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
+        pytest tests/ \
+          --html=reports/report_${TIMESTAMP}.html \
+          --self-contained-html \
+          --alluredir=reports/allure-results \
+          -v
 
-      - name: Run Tests with Allure, HTML Report, and Logs
-        run: |
-          $timestamp = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
-          $htmlReport = "pytest-html/report_$timestamp.html"
-          $logFile = "logs/test_log_$timestamp.log"
-          .\venv\Scripts\activate
-          echo "import logging; logging.basicConfig(filename='$logFile', level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')" > log_config.py
-          pytest -v -s ./tests/test_parabank.py --alluredir=reports/allure-result --html="$htmlReport" --self-contained-html
-        shell: pwsh
+    - name: Upload pytest-html report
+      uses: actions/upload-artifact@v3
+      with:
+        name: pytest-html-report
+        path: reports/report_*.html
 
-      - name: Upload Allure Results
-        uses: actions/upload-artifact@v3
-        with:
-          name: allure-results
-          path: reports/allure-result
+    - name: Generate Allure report
+      if: always()
+      run: |
+        allure generate reports/allure-results -o reports/allure-report --clean
 
-      - name: Upload pytest-html Report
-        uses: actions/upload-artifact@v3
-        with:
-          name: pytest-html-report
-          path: pytest-html/*.html
+    - name: Upload Allure report
+      uses: actions/upload-artifact@v3
+      with:
+        name: allure-report
+        path: reports/allure-report
 
-      - name: Upload Logs
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-logs
-          path: logs/*.log
-
-      - name: Generate and Publish Allure Report (GitHub Pages)
-        uses: simple-elf/allure-report-action@master
-        with:
-          allure_results: reports/allure-result
-          allure_report: reports/allure-report
-          gh_pages: gh-pages
+    - name: Deploy Allure report to GitHub Pages
+      if: github.ref == 'refs/heads/main'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: reports/allure-report
