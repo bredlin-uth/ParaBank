@@ -1,66 +1,76 @@
-name: Pytest with Allure Report
+name: Pytest Automation with Allure and HTML Reports
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
   pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
-  run-tests:
-    runs-on: windows-latest  # Using Windows runner to match your Jenkins environment
+  test:
+    runs-on: windows-latest
+
+    env:
+      PYTHON_VERSION: '3.10'
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Set up Python
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@v4
         with:
-          python-version: '3.12.4'
+          python-version: ${{ env.PYTHON_VERSION }}
 
-      - name: Create Virtual Environment & Install Dependencies
+      - name: Create Virtual Environment
         run: |
           python -m venv venv
-          .\venv\Scripts\activate
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
 
-      - name: Run Tests with Allure
+      - name: Activate Virtual Env and Install Dependencies
         run: |
           .\venv\Scripts\activate
-          pytest -v -s ./tests/test_parabank.py --alluredir=allure-result
+          pip install -r requirements.txt
+        shell: pwsh
+
+      - name: Prepare Directories
+        run: |
+          mkdir reports
+          mkdir logs
+          mkdir pytest-html
+        shell: pwsh
+
+      - name: Run Tests with Allure, HTML Report, and Logs
+        run: |
           $timestamp = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
-          $reportPath = "html-report/report_$timestamp.html"
-
-      - name: Upload pytest-html Report as Artifact
-        uses: actions/upload-artifact@v3.1.3
-        with:
-          name: pytest-html-report
-          path: $reportPath
-
-      - name: Upload Test Logs
-        uses: actions/upload-artifact@v3.1.3
-        with:
-          name: test-logs
-          path: logs/parabank_$timestamp.log
+          $htmlReport = "pytest-html/report_$timestamp.html"
+          $logFile = "logs/test_log_$timestamp.log"
+          .\venv\Scripts\activate
+          echo "import logging; logging.basicConfig(filename='$logFile', level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')" > log_config.py
+          pytest -v -s ./tests/test_parabank.py --alluredir=reports/allure-result --html="$htmlReport" --self-contained-html
+        shell: pwsh
 
       - name: Upload Allure Results
         uses: actions/upload-artifact@v3.1.3
         with:
           name: allure-results
-          path: allure-result
+          path: reports/allure-result
 
-      - name: Generate and Publish Allure Report
-        uses: simple-elf/allure-report-action@master
-        with:
-          allure_results: allure-result
-          allure_report: allure-report
-          gh_pages: gh-pages
-
-      - name: Upload Allure Report as Artifact
+      - name: Upload pytest-html Report
         uses: actions/upload-artifact@v3.1.3
         with:
-          name: allure-report
-          path: allure-report
+          name: pytest-html-report
+          path: pytest-html/*.html
 
+      - name: Upload Logs
+        uses: actions/upload-artifact@v3.1.3
+        with:
+          name: test-logs
+          path: logs/*.log
 
+      - name: Generate and Publish Allure Report (GitHub Pages)
+        uses: simple-elf/allure-report-action@master
+        with:
+          allure_results: reports/allure-result
+          allure_report: reports/allure-report
+          gh_pages: gh-pages
