@@ -31,15 +31,20 @@ def setup_and_teardown(request):
 
     if browser == "chrome":
         options = webdriver.ChromeOptions()
-        options.add_experimental_option('detach', True)
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-gpu")
+        # options.add_argument("--headless")  # Add for CI
+        options.add_argument(f"--user-data-dir=/tmp/chrome-{os.getpid()}")  # Unique directory
         service = ChromeService(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service, options=options)
     elif browser == "edge":
         options = webdriver.EdgeOptions()
+        # options.add_argument("--headless")  # Add for CI
         service = EdgeService(EdgeChromiumDriverManager().install())
         driver = webdriver.Edge(service=service, options=options)
     elif browser == "firefox":
         options = webdriver.FirefoxOptions()
+        # options.add_argument("--headless")  # Add for CI
         service = FirefoxService(GeckoDriverManager().install())
         driver = webdriver.Firefox(service=service, options=options)
     else:

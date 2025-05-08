@@ -1,66 +1,75 @@
-name: Pytest with Allure Report
+name: ParaBank Test Automation
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
+    branches: [ bredlin ]
 
 jobs:
-  run-tests:
-    runs-on: windows-latest  # Using Windows runner to match your Jenkins environment
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.12.4'
+    - name: Set up Python 3.12.4
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12.4'
 
-      - name: Create Virtual Environment & Install Dependencies
-        run: |
-          python -m venv venv
-          .\venv\Scripts\activate
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install allure-pytest pytest-html
 
-      - name: Run Tests with Allure
-        run: |
-          .\venv\Scripts\activate
-          pytest -v -s ./tests/test_parabank.py --alluredir=allure-result
-          $timestamp = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
-          $reportPath = "html-report/report_$timestamp.html"
+    - name: Install Allure CLI
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y openjdk-17-jre
+        wget https://github.com/allure-framework/allure2/releases/download/2.24.0/allure-2.24.0.tgz
+        sudo tar -zxvf allure-2.24.0.tgz -C /opt/
+        sudo ln -s /opt/allure-2.24.0/bin/allure /usr/bin/allure
 
-      - name: Upload pytest-html Report as Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: pytest-html-report
-          path: $reportPath
+    - name: Run tests
+      id: pytest
+      continue-on-error: true  # Continue even if tests fail
+      run: |
+        mkdir -p allure-result
+        mkdir -p allure-report
+        mkdir -p html-report
+        pytest -v --alluredir=./allure-result --clean-alluredir
 
-      - name: Upload Test Logs
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-logs
-          path: logs/parabank_$timestamp.log
+    - name: Upload pytest-html report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: pytest-html-report
+        path: html-report/report_*.html
 
-      - name: Upload Allure Results
-        uses: actions/upload-artifact@v3
-        with:
-          name: allure-results
-          path: allure-result
+    - name: Generate Allure report
+      if: always()
+      run: |
+        allure generate "./allure-result" -o "./allure-report" --clean
 
-      - name: Generate and Publish Allure Report
-        uses: simple-elf/allure-report-action@master
-        with:
-          allure_results: allure-result
-          allure_report: allure-report
-          gh_pages: gh-pages
+    - name: Upload Allure report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: allure-report
+        path: ./allure-report
 
-      - name: Upload Allure Report as Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: allure-report
-          path: allure-report
+    - name: Deploy to gh-pages branch
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./allure-report
+        publish_branch: gh-pages  # Explicitly deploy to gh-pages branch
 
-
+#    - name: Deploy Allure report to GitHub Pages
+#      if: github.ref == 'refs/heads/main' && always()
+#      uses: peaceiris/actions-gh-pages@v3
+#      with:
+#        github_token: ${{ secrets.GITHUB_TOKEN }}
+#        publish_dir: ./allure-report
