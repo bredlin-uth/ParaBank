@@ -53,13 +53,13 @@ jobs:
         name: test-results
         path: test-results/
 
-    - name: Prepare files for GitHub Pages
-      if: always()
-      run: |
-        # Copy pytest-html report to the publish directory
-        cp ./test-results/html-reports/*.html ./test-results/
-        # Copy logs to the publish directory (optional)
-        cp -r ./test-results/logs ./test-results/
+#    - name: Prepare files for GitHub Pages
+#      if: always()
+#      run: |
+#        # Copy pytest-html report to the publish directory
+#        cp ./test-results/html-reports/*.html ./test-results/
+#        # Copy logs to the publish directory (optional)
+#        cp -r ./test-results/logs ./test-results/
 
     - name: Deploy reports to gh-pages
       if: always()
