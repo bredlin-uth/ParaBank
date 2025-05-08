@@ -1,0 +1,11 @@
+2025-05-08 06:08:11,508 - WDM - INFO - logger.py:11 - ====== WebDriver manager ======
+2025-05-08 06:08:11,865 - WDM - INFO - logger.py:11 - Get LATEST chromedriver version for google-chrome
+2025-05-08 06:08:11,880 - WDM - INFO - logger.py:11 - Get LATEST chromedriver version for google-chrome
+2025-05-08 06:08:11,892 - WDM - INFO - logger.py:11 - There is no [linux64] chromedriver "136.0.7103.92" for browser google-chrome "136.0.7103" in cache
+2025-05-08 06:08:11,893 - WDM - INFO - logger.py:11 - Get LATEST chromedriver version for google-chrome
+2025-05-08 06:08:11,936 - WDM - INFO - logger.py:11 - WebDriver version 136.0.7103.92 selected
+2025-05-08 06:08:11,939 - WDM - INFO - logger.py:11 - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.92/linux64/chromedriver-linux64.zip
+2025-05-08 06:08:11,939 - WDM - INFO - logger.py:11 - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.92/linux64/chromedriver-linux64.zip
+2025-05-08 06:08:11,978 - WDM - INFO - logger.py:11 - Driver downloading response is 200
+2025-05-08 06:08:12,024 - WDM - INFO - logger.py:11 - Get LATEST chromedriver version for google-chrome
+2025-05-08 06:08:12,144 - WDM - INFO - logger.py:11 - Driver has been saved in cache [/home/runner/.wdm/drivers/chromedriver/linux64/136.0.7103.92]
