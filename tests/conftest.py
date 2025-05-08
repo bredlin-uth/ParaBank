@@ -34,7 +34,7 @@ def setup_and_teardown(request):
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-gpu")
         # options.add_argument("--headless")  # Add for CI
-        options.add_argument(f"--user-data-dir=/tmp/chrome-{os.getpid()}")  # Unique directory
+        # options.add_argument(f"--user-data-dir=/tmp/chrome-{os.getpid()}")  # Unique directory
         service = ChromeService(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service, options=options)
     elif browser == "edge":
