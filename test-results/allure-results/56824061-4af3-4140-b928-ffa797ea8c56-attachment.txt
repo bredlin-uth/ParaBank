@@ -1,0 +1,38 @@
+INFO     AccountServices:Web_Utils.py:24 Clicked element: ('xpath', "//a[contains(text(),'Request Loan')]")
+INFO     RequestLoan:Web_Utils.py:60 Element ('xpath', "//h1[contains(text(),'Apply for a Loan')]") visibility: True
+INFO     RequestLoan:Request_Loan.py:42 Navigate to the Request Loan page
+INFO     RequestLoan:Web_Utils.py:43 Entered text in element ('id', 'amount'): 10
+INFO     RequestLoan:Web_Utils.py:43 Entered text in element ('id', 'downPayment'): 2
+INFO     RequestLoan:Web_Utils.py:120 Selected option with value '18450' from dropdown ('id', 'fromAccountId')
+INFO     RequestLoan:Web_Utils.py:24 Clicked element: ('xpath', "//input[@value='Apply Now']")
+INFO     RequestLoan:Web_Utils.py:60 Element ('xpath', "//h1[contains(text(),'Loan Request Processed')]") visibility: True
+INFO     RequestLoan:Web_Utils.py:91 Retrieved text from element ('xpath', "//td[@id='loanProviderName']/parent::tr"): Loan Provider: Wealth Securities Dynamic Loans (WSDL)
+INFO     RequestLoan:Web_Utils.py:91 Retrieved text from element ('xpath', "//td[@id='responseDate']/parent::tr"): Date: 05-8-2025
+INFO     RequestLoan:Web_Utils.py:91 Retrieved text from element ('xpath', "//td[@id='loanStatus']/parent::tr"): Status: Approved
+INFO     RequestLoan:Web_Utils.py:91 Retrieved text from element ('id', 'loanRequestApproved'): Congratulations, your loan has been approved.
+Your new account number: 18561
+INFO     RequestLoan:Web_Utils.py:91 Retrieved text from element ('id', 'newAccountId'): 18561
+INFO     RequestLoan:Web_Utils.py:24 Clicked element: ('id', 'newAccountId')
+INFO     AccountOverview:Web_Utils.py:60 Element ('xpath', "//h1[contains(text(),'Account Details')]") visibility: True
+INFO     AccountOverview:Account_Overview.py:58 Navigate to the Account Details page
+INFO     AccountOverview:Web_Utils.py:91 Retrieved text from element ('id', 'accountId'): 18561
+INFO     AccountOverview:Web_Utils.py:91 Retrieved text from element ('id', 'accountType'): LOAN
+INFO     AccountOverview:Web_Utils.py:91 Retrieved text from element ('id', 'balance'): $10.00
+INFO     AccountOverview:Web_Utils.py:91 Retrieved text from element ('id', 'availableBalance'): $10.00
+INFO     AccountServices:Web_Utils.py:24 Clicked element: ('xpath', "//a[contains(text(),'Accounts Overview')]")
+INFO     AccountOverview:Web_Utils.py:60 Element ('xpath', "//table[@id='accountTable']/descendant::a[text()='18450']") visibility: True
+INFO     AccountOverview:Web_Utils.py:91 Retrieved text from element ('xpath', "//td/a[text()='18450']/../following-sibling::td[1]"): $98.00
+INFO     AccountOverview:Web_Utils.py:91 Retrieved text from element ('xpath', "//td/a[text()='18450']/../following-sibling::td[1]"): $98.00
+INFO     AccountOverview:Web_Utils.py:24 Clicked element: ('xpath', "//table[@id='accountTable']/descendant::a[text()='18450']")
+INFO     AccountOverview:Web_Utils.py:24 Clicked element: ('xpath', "//td[text()='$2.00']/preceding-sibling::td/a[contains(text(), 'Down Payment')]")
+INFO     AccountOverview:Web_Utils.py:60 Element ('xpath', "//h1[contains(text(), 'Transaction Details')]") visibility: True
+INFO     AccountOverview:Web_Utils.py:91 Retrieved text from element ('xpath', "//h1[contains(text(), 'Transaction Details')]/following-sibling::table"): Transaction ID: 16696
+Date: 05-08-2025
+Description: Down Payment for Loan # 18561
+Type: Debit
+Amount: $2.00
+INFO     AccountOverview:Web_Utils.py:91 Retrieved text from element ('xpath', "//b[contains(text(), 'Description')]/../following-sibling::td"): Down Payment for Loan # 18561
+INFO     AccountOverview:Web_Utils.py:91 Retrieved text from element ('xpath', "//b[contains(text(), 'Type')]/../following-sibling::td"): Debit
+INFO     AccountOverview:Web_Utils.py:91 Retrieved text from element ('xpath', "//b[contains(text(), 'Amount')]/../following-sibling::td"): $2.00
+INFO     AccountOverview:Web_Utils.py:91 Retrieved text from element ('xpath', "//b[contains(text(), 'Transaction ID')]/../following-sibling::td"): 16696
+INFO     AccountOverview:Web_Utils.py:91 Retrieved text from element ('xpath', "//b[contains(text(), 'Date')]/../following-sibling::td"): 05-08-2025
