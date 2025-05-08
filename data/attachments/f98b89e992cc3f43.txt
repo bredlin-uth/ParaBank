@@ -1,5 +1,0 @@
-Transaction ID: 15586
-Date: 05-08-2025
-Description: Funds Transfer Received
-Type: Credit
-Amount: $3.00
