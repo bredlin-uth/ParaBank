@@ -39,7 +39,7 @@ jobs:
         mkdir -p allure-result
         mkdir -p allure-report
         mkdir -p html-report
-        pytest -v --alluredir=./allure-result --clean-alluredir
+        pytest --headless -v --alluredir=./allure-result --clean-alluredir
 
     - name: Upload pytest-html report
       if: always()

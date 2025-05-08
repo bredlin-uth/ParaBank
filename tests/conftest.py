@@ -17,6 +17,7 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 
 # Custom pytest command-line option to specify the browser
 def pytest_addoption(parser):
+    parser.addoption("--headless", action="store_true", help="Run headless")
     parser.addoption("--browser", action="store", default="chrome",
                      help="Browser to use for tests: chrome, firefox, edge")
 
@@ -33,18 +34,21 @@ def setup_and_teardown(request):
         options = webdriver.ChromeOptions()
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-gpu")
-        options.add_argument("--headless")  # Add for CI
+        if request.config.getoption("--headless") or os.getenv('CI') == 'true':
+            options.add_argument("--headless=new")  # Add for CI
         options.add_argument(f"--user-data-dir=/tmp/chrome-{os.getpid()}")  # Unique directory
         service = ChromeService(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service, options=options)
     elif browser == "edge":
         options = webdriver.EdgeOptions()
-        options.add_argument("--headless")  # Add for CI
+        if request.config.getoption("--headless") or os.getenv('CI') == 'true':
+            options.add_argument("--headless=new")  # Add for CI
         service = EdgeService(EdgeChromiumDriverManager().install())
         driver = webdriver.Edge(service=service, options=options)
     elif browser == "firefox":
         options = webdriver.FirefoxOptions()
-        options.add_argument("--headless")  # Add for CI
+        if request.config.getoption("--headless") or os.getenv('CI') == 'true':
+            options.add_argument("--headless=new")  # Add for CI
         service = FirefoxService(GeckoDriverManager().install())
         driver = webdriver.Firefox(service=service, options=options)
     else:
