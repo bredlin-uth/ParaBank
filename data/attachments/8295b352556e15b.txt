@@ -1,0 +1,10 @@
+2025-05-08 06:17:28,620 - FindTransactions - INFO - Web_Utils.py:24 - Clicked element: ('link text', 'Find Transactions')
+2025-05-08 06:17:28,680 - FindTransactions - INFO - Web_Utils.py:43 - Entered text in element ('id', 'fromDate'): 05-08-2025
+2025-05-08 06:17:28,738 - FindTransactions - INFO - Web_Utils.py:43 - Entered text in element ('id', 'toDate'): 05-08-2025
+2025-05-08 06:17:28,794 - FindTransactions - INFO - Web_Utils.py:24 - Clicked element: ('id', 'findByDateRange')
+2025-05-08 06:17:29,314 - FindTransactions - INFO - Web_Utils.py:72 - Element ('id', 'transactionTable') is now visible.
+2025-05-08 06:17:29,426 - FindTransactions - INFO - Web_Utils.py:72 - Element ('xpath', "//a[contains(text(),'Funds Transfer Sent') or contains(text(),'Funds Transfer Received')]") is now visible.
+2025-05-08 06:17:29,542 - FindTransactions - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//a[contains(text(),'Funds Transfer Sent') or contains(text(),'Funds Transfer Received')]")
+2025-05-08 06:17:29,662 - FindTransactions - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//b[normalize-space()='Transaction ID:']/parent::td/following-sibling::td"): 15031
+2025-05-08 06:17:29,672 - FindTransactions - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//b[normalize-space()= 'Amount:']/parent::td/following-sibling::td"): $100.00
+2025-05-08 06:17:29,786 - FindTransactions - INFO - Web_Utils.py:24 - Clicked element: ('link text', 'Find Transactions')
