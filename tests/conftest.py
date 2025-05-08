@@ -67,7 +67,7 @@ def setup_and_teardown(request):
 def pytest_configure(config):
     """Configure automatic HTML reporting"""
     if not hasattr(config, 'workerinput'):
-        report_dir = "./html-report"
+        report_dir = "./test-results/html-reports"
         os.makedirs(report_dir, exist_ok=True)
         if not config.option.htmlpath:
             now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
