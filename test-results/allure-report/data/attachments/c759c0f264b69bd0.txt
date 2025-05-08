@@ -1,5 +1,0 @@
-Transaction ID: 16474
-Date: 05-08-2025
-Description: Funds Transfer Sent
-Type: Debit
-Amount: $3.00

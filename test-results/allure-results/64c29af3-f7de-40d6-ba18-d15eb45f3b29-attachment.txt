@@ -1,5 +1,0 @@
-Transaction ID: 16696
-Date: 05-08-2025
-Description: Down Payment for Loan # 18561
-Type: Debit
-Amount: $2.00

@@ -1,0 +1,10 @@
+2025-05-08 11:15:29,018 - UpdateContactInfo - INFO - Web_Utils.py:24 - Clicked element: ('link text', 'Update Contact Info')
+2025-05-08 11:15:29,076 - UpdateContactInfo - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.firstName'): Dylan
+2025-05-08 11:15:29,147 - UpdateContactInfo - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.lastName'): Davis
+2025-05-08 11:15:29,210 - UpdateContactInfo - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.address.street'): 537 Elliott Glens
+2025-05-08 11:15:29,270 - UpdateContactInfo - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.address.city'): Brianside
+2025-05-08 11:15:29,326 - UpdateContactInfo - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.address.state'): New Hampshire
+2025-05-08 11:15:29,379 - UpdateContactInfo - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.address.zipCode'): 400011
+2025-05-08 11:15:32,435 - UpdateContactInfo - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.phoneNumber'): 9313352933
+2025-05-08 11:15:37,500 - UpdateContactInfo - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//input[@value='Update Profile']")
+2025-05-08 11:15:38,024 - UpdateContactInfo - INFO - Web_Utils.py:72 - Element ('xpath', "//h1[normalize-space()='Profile Updated']") is now visible.
