@@ -1,0 +1,40 @@
+2025-05-09 05:16:08,315 - AccountServices - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//a[contains(text(),'Open New Account')]")
+2025-05-09 05:16:08,380 - OpenNewAccount - INFO - Web_Utils.py:107 - Selected option 'CHECKING' from dropdown ('xpath', "//select[@id='type']")
+2025-05-09 05:16:08,421 - OpenNewAccount - INFO - Web_Utils.py:133 - Selected option with index '0' from dropdown ('xpath', "//select[@id='fromAccountId']")
+2025-05-09 05:16:08,606 - OpenNewAccount - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//input[@value='Open New Account']")
+2025-05-09 05:16:11,620 - AccountServices - INFO - Web_Utils.py:60 - Element ('xpath', "//div[@id='openAccountResult']") visibility: True
+2025-05-09 05:16:11,728 - AccountServices - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//div[@id='openAccountResult']"): Account Opened!
+Congratulations, your account is now open.
+Your new account number: 14121
+2025-05-09 05:16:11,741 - OpenNewAccount - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//a[@id='newAccountId']"): 14121
+2025-05-09 05:16:11,889 - AccountServices - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//a[contains(text(),'Accounts Overview')]")
+2025-05-09 05:16:16,904 - AccountOverview - INFO - Web_Utils.py:60 - Element ('xpath', "//table[@id='accountTable']/descendant::a[text()='14121']") visibility: True
+2025-05-09 05:16:17,014 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//td/a[text()='14121']/../following-sibling::td[1]"): $100.00
+2025-05-09 05:16:17,025 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//td/a[text()='14121']/../following-sibling::td[1]"): $100.00
+2025-05-09 05:16:17,181 - AccountOverview - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//table[@id='accountTable']/descendant::a[text()='14121']")
+2025-05-09 05:16:20,196 - AccountOverview - INFO - Web_Utils.py:60 - Element ('xpath', "//h1[contains(text(),'Account Details')]") visibility: True
+2025-05-09 05:16:20,286 - AccountOverview - INFO - Account_Overview.py:58 - Navigate to the Account Details page
+2025-05-09 05:16:20,300 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'accountId'): 14121
+2025-05-09 05:16:20,314 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'accountType'): CHECKING
+2025-05-09 05:16:20,328 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'balance'): $100.00
+2025-05-09 05:16:20,341 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'availableBalance'): $100.00
+2025-05-09 05:16:20,495 - AccountServices - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//a[contains(text(),'Open New Account')]")
+2025-05-09 05:16:20,562 - OpenNewAccount - INFO - Web_Utils.py:107 - Selected option 'SAVINGS' from dropdown ('xpath', "//select[@id='type']")
+2025-05-09 05:16:20,591 - OpenNewAccount - INFO - Web_Utils.py:133 - Selected option with index '0' from dropdown ('xpath', "//select[@id='fromAccountId']")
+2025-05-09 05:16:20,757 - OpenNewAccount - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//input[@value='Open New Account']")
+2025-05-09 05:16:23,768 - AccountServices - INFO - Web_Utils.py:60 - Element ('xpath', "//div[@id='openAccountResult']") visibility: True
+2025-05-09 05:16:23,877 - AccountServices - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//div[@id='openAccountResult']"): Account Opened!
+Congratulations, your account is now open.
+Your new account number: 14232
+2025-05-09 05:16:23,887 - OpenNewAccount - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//a[@id='newAccountId']"): 14232
+2025-05-09 05:16:24,050 - AccountServices - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//a[contains(text(),'Accounts Overview')]")
+2025-05-09 05:16:29,065 - AccountOverview - INFO - Web_Utils.py:60 - Element ('xpath', "//table[@id='accountTable']/descendant::a[text()='14232']") visibility: True
+2025-05-09 05:16:29,181 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//td/a[text()='14232']/../following-sibling::td[1]"): $100.00
+2025-05-09 05:16:29,191 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//td/a[text()='14232']/../following-sibling::td[1]"): $100.00
+2025-05-09 05:16:29,373 - AccountOverview - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//table[@id='accountTable']/descendant::a[text()='14232']")
+2025-05-09 05:16:32,385 - AccountOverview - INFO - Web_Utils.py:60 - Element ('xpath', "//h1[contains(text(),'Account Details')]") visibility: True
+2025-05-09 05:16:32,483 - AccountOverview - INFO - Account_Overview.py:58 - Navigate to the Account Details page
+2025-05-09 05:16:32,494 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'accountId'): 14232
+2025-05-09 05:16:32,504 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'accountType'): SAVINGS
+2025-05-09 05:16:32,514 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'balance'): $100.00
+2025-05-09 05:16:32,524 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'availableBalance'): $100.00

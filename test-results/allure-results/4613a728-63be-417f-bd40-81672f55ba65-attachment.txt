@@ -1,0 +1,20 @@
+INFO     AccountServices:Web_Utils.py:24 Clicked element: ('xpath', "//a[contains(text(),'Bill Pay')]")
+INFO     BillPay:Web_Utils.py:60 Element ('xpath', "//h1[contains(text(),'Bill Payment Service')]") visibility: True
+INFO     BillPay:Bill_Pay.py:44 Navigate to the Bill Pay page
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'payee.name'): Maureen
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'payee.address.street'): 829 Laura Street
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'payee.address.city'): South Christopher
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'payee.address.state'): Colorado
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'payee.address.zipCode'): 777849
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'payee.phoneNumber'): 8871057380
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'payee.accountNumber'): 7313
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'verifyAccount'): 7313
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'amount'): 2
+INFO     BillPay:Web_Utils.py:120 Selected option with value '14121' from dropdown ('name', 'fromAccountId')
+INFO     BillPay:Web_Utils.py:107 Selected option '14121' from dropdown ('name', 'fromAccountId')
+INFO     BillPay:Web_Utils.py:24 Clicked element: ('xpath', "//input[@value='Send Payment']")
+INFO     BillPay:Web_Utils.py:60 Element ('xpath', "//h1[contains(text(),'Bill Payment Complete')]") visibility: True
+INFO     BillPay:Web_Utils.py:91 Retrieved text from element ('id', 'payeeName'): Maureen
+INFO     BillPay:Web_Utils.py:91 Retrieved text from element ('id', 'amount'): $2.00
+INFO     BillPay:Web_Utils.py:91 Retrieved text from element ('id', 'fromAccountId'): 14121
+INFO     BillPay:Web_Utils.py:91 Retrieved text from element ('xpath', "//h1[contains(text(),'Bill Payment Complete')]/following-sibling::p"): Bill Payment to Maureen in the amount of $2.00 from account 14121 was successful.

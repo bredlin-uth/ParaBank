@@ -1,5 +1,0 @@
-2025-05-08 07:00:59,313 - Login - INFO - Web_Utils.py:43 - Entered text in element ('xpath', "//div[@class='login']/input[@name='username']"): alexander95138
-2025-05-08 07:00:59,369 - Login - INFO - Web_Utils.py:43 - Entered text in element ('xpath', "//div[@class='login']/input[@name='password']"): Test@123
-2025-05-08 07:00:59,974 - Login - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//div[@class='login']/input[@value='Log In']")
-2025-05-08 07:01:02,988 - AccountServices - INFO - Web_Utils.py:60 - Element ('xpath', "//p[@class='smallText']") visibility: True
-2025-05-08 07:01:03,088 - AccountServices - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//p[@class='smallText']"): Welcome Amy Nguyen

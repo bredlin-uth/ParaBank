@@ -1,9 +1,0 @@
-INFO     FindTransactions:Web_Utils.py:24 Clicked element: ('link text', 'Find Transactions')
-INFO     FindTransactions:Web_Utils.py:43 Entered text in element ('id', 'fromDate'): 05-09-2025
-INFO     FindTransactions:Web_Utils.py:43 Entered text in element ('id', 'toDate'): 05-09-2025
-INFO     FindTransactions:Web_Utils.py:24 Clicked element: ('id', 'findByDateRange')
-ERROR    FindTransactions:Web_Utils.py:75 Timeout: Element ('id', 'transactionTable') not visible.
-INFO     FindTransactions:Web_Utils.py:72 Element ('xpath', "//p[@class='error']") is now visible.
-INFO     FindTransactions:Web_Utils.py:91 Retrieved text from element ('xpath', "//p[@class='error']"): An internal error has occurred and has been logged.
-ERROR    FindTransactions:Find_Transactions.py:146 An internal error has occurred and has been logged.
-INFO     FindTransactions:Web_Utils.py:24 Clicked element: ('link text', 'Find Transactions')

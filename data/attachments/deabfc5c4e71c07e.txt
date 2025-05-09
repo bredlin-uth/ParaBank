@@ -1,5 +1,0 @@
-Transaction ID: 17473
-Date: 05-08-2025
-Description: Down Payment for Loan # 17118
-Type: Debit
-Amount: $2.00
