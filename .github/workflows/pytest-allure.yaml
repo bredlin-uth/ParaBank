@@ -53,14 +53,6 @@ jobs:
         name: test-results
         path: test-results/
 
-#    - name: Prepare files for GitHub Pages
-#      if: always()
-#      run: |
-#        # Copy pytest-html report to the publish directory
-#        cp ./test-results/html-reports/*.html ./test-results/
-#        # Copy logs to the publish directory (optional)
-#        cp -r ./test-results/logs ./test-results/
-
     - name: Deploy reports to gh-pages
       if: always()
       uses: peaceiris/actions-gh-pages@v3
@@ -69,45 +61,3 @@ jobs:
         publish_dir: ./test-results
         publish_branch: gh-pages
         destination_dir: test-results
-
-#    - name: Run tests
-#      id: pytest
-#      continue-on-error: true  # Continue even if tests fail
-#      run: |
-#        mkdir -p allure-result
-#        mkdir -p allure-report
-#        mkdir -p html-report
-#        pytest --headless -v --alluredir=./allure-result --clean-alluredir
-#
-#    - name: Upload pytest-html report
-#      if: always()
-#      uses: actions/upload-artifact@v4
-#      with:
-#        name: pytest-html-report
-#        path: html-report/report_*.html
-#
-#    - name: Generate Allure report
-#      if: always()
-#      run: |
-#        allure generate "./allure-result" -o "./allure-report" --clean
-#
-#    - name: Upload Allure report
-#      if: always()
-#      uses: actions/upload-artifact@v4
-#      with:
-#        name: allure-report
-#        path: ./allure-report
-#
-#    - name: Deploy to gh-pages branch
-#      uses: peaceiris/actions-gh-pages@v3
-#      with:
-#        github_token: ${{ secrets.GITHUB_TOKEN }}
-#        publish_dir: ./allure-report
-#        publish_branch: gh-pages  # Explicitly deploy to gh-pages branch
-#
-##    - name: Deploy Allure report to GitHub Pages
-##      if: github.ref == 'refs/heads/main' && always()
-##      uses: peaceiris/actions-gh-pages@v3
-##      with:
-##        github_token: ${{ secrets.GITHUB_TOKEN }}
-##        publish_dir: ./allure-report
