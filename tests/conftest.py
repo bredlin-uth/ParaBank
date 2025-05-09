@@ -67,11 +67,17 @@ def setup_and_teardown(request):
 def pytest_configure(config):
     """Configure automatic HTML reporting"""
     if not hasattr(config, 'workerinput'):
-        report_dir = "./test-results/html-reports"
-        os.makedirs(report_dir, exist_ok=True)
-        if not config.option.htmlpath:
-            now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-            config.option.htmlpath = f"{report_dir}/report_{now}.html"
+        if not os.getenv('CI') == 'true':
+            report_dir = "./html-reports"
+            os.makedirs(report_dir, exist_ok=True)
+            if not config.option.htmlpath:
+                now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+                config.option.htmlpath = f"{report_dir}/report_{now}.html"
+        else:
+            report_dir = "./test-results/html-reports"
+            os.makedirs(report_dir, exist_ok=True)
+            if not config.option.htmlpath:
+                config.option.htmlpath = f"{report_dir}/pytest-report.html"
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item, call):

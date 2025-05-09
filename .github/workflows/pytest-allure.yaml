@@ -63,4 +63,4 @@ jobs:
         destination_dir: test-results
 
 # https://bredlin-uth.github.io/ParaBank/test-results/allure-report/index.html
-# https://bredlin-uth.github.io/ParaBank/test-results/html-reports/report_<timestamp>html
+# https://bredlin-uth.github.io/ParaBank/test-results/html-reports/pytest-report.html
