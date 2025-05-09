@@ -1,5 +1,0 @@
-2025-05-09 06:31:37,672 - AccountServices - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//a[contains(text(),'Request Loan')]")
-2025-05-09 06:31:37,687 - RequestLoan - INFO - Web_Utils.py:60 - Element ('xpath', "//h1[contains(text(),'Apply for a Loan')]") visibility: True
-2025-05-09 06:31:37,809 - RequestLoan - INFO - Request_Loan.py:42 - Navigate to the Request Loan page
-2025-05-09 06:31:37,865 - RequestLoan - INFO - Web_Utils.py:43 - Entered text in element ('id', 'amount'): 10
-2025-05-09 06:31:37,918 - RequestLoan - INFO - Web_Utils.py:43 - Entered text in element ('id', 'downPayment'): 2

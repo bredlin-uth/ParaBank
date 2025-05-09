@@ -1,0 +1,20 @@
+INFO     AccountServices:Web_Utils.py:24 Clicked element: ('xpath', "//a[contains(text(),'Bill Pay')]")
+INFO     BillPay:Web_Utils.py:60 Element ('xpath', "//h1[contains(text(),'Bill Payment Service')]") visibility: True
+INFO     BillPay:Bill_Pay.py:44 Navigate to the Bill Pay page
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'payee.name'): Kenneth
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'payee.address.street'): 1676 Mark Lodge Suite 797
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'payee.address.city'): West Jennatown
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'payee.address.state'): Delaware
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'payee.address.zipCode'): 977023
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'payee.phoneNumber'): 9790133935
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'payee.accountNumber'): 5408
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'verifyAccount'): 5408
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'amount'): 2
+INFO     BillPay:Web_Utils.py:120 Selected option with value '14232' from dropdown ('name', 'fromAccountId')
+INFO     BillPay:Web_Utils.py:107 Selected option '14232' from dropdown ('name', 'fromAccountId')
+INFO     BillPay:Web_Utils.py:24 Clicked element: ('xpath', "//input[@value='Send Payment']")
+INFO     BillPay:Web_Utils.py:60 Element ('xpath', "//h1[contains(text(),'Bill Payment Complete')]") visibility: True
+INFO     BillPay:Web_Utils.py:91 Retrieved text from element ('id', 'payeeName'): Kenneth
+INFO     BillPay:Web_Utils.py:91 Retrieved text from element ('id', 'amount'): $2.00
+INFO     BillPay:Web_Utils.py:91 Retrieved text from element ('id', 'fromAccountId'): 14232
+INFO     BillPay:Web_Utils.py:91 Retrieved text from element ('xpath', "//h1[contains(text(),'Bill Payment Complete')]/following-sibling::p"): Bill Payment to Kenneth in the amount of $2.00 from account 14232 was successful.

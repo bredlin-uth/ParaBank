@@ -1,0 +1,46 @@
+2025-05-09 07:10:44,549 - AccountServices - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//a[contains(text(),'Transfer Funds')]")
+2025-05-09 07:10:44,571 - TransferFunds - INFO - Web_Utils.py:60 - Element ('xpath', "//h1[contains(text(),'Transfer Funds')]") visibility: True
+2025-05-09 07:10:44,700 - TransferFunds - INFO - Transfer_Funds.py:38 - Navigate to the Transfer Funds page
+2025-05-09 07:10:44,748 - TransferFunds - INFO - Web_Utils.py:43 - Entered text in element ('id', 'amount'): 3
+2025-05-09 07:10:44,804 - TransferFunds - INFO - Web_Utils.py:120 - Selected option with value '14121' from dropdown ('id', 'fromAccountId')
+2025-05-09 07:10:44,857 - TransferFunds - INFO - Web_Utils.py:120 - Selected option with value '14121' from dropdown ('id', 'fromAccountId')
+2025-05-09 07:10:45,011 - TransferFunds - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//input[@value='Transfer']")
+2025-05-09 07:10:48,025 - TransferFunds - INFO - Web_Utils.py:60 - Element ('xpath', "//h1[contains(text(),'Transfer Complete!')]") visibility: True
+2025-05-09 07:10:48,129 - TransferFunds - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'amountResult'): $3.00
+2025-05-09 07:10:48,141 - TransferFunds - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'fromAccountIdResult'): 14121
+2025-05-09 07:10:48,154 - TransferFunds - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'toAccountIdResult'): 14121
+2025-05-09 07:10:48,167 - TransferFunds - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//h1[contains(text(),'Transfer Complete!')]/following-sibling::p"): $3.00 has been transferred from account #14121 to account #14121.
+2025-05-09 07:10:48,315 - AccountServices - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//a[contains(text(),'Accounts Overview')]")
+2025-05-09 07:10:53,330 - AccountOverview - INFO - Web_Utils.py:60 - Element ('xpath', "//table[@id='accountTable']/descendant::a[text()='14121']") visibility: True
+2025-05-09 07:10:53,446 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//td/a[text()='14121']/../following-sibling::td[1]"): -$5.00
+2025-05-09 07:10:53,456 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//td/a[text()='14121']/../following-sibling::td[1]"): -$5.00
+2025-05-09 07:10:53,617 - AccountOverview - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//table[@id='accountTable']/descendant::a[text()='14121']")
+2025-05-09 07:10:53,839 - AccountOverview - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//td[text()='$3.00']/preceding-sibling::td/a[contains(text(), 'Sent')]")
+2025-05-09 07:10:53,854 - AccountOverview - INFO - Web_Utils.py:60 - Element ('xpath', "//h1[contains(text(), 'Transaction Details')]") visibility: True
+2025-05-09 07:10:53,983 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//h1[contains(text(), 'Transaction Details')]/following-sibling::table"): Transaction ID: 15475
+Date: 05-09-2025
+Description: Funds Transfer Sent
+Type: Debit
+Amount: $3.00
+2025-05-09 07:10:53,997 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//b[contains(text(), 'Description')]/../following-sibling::td"): Funds Transfer Sent
+2025-05-09 07:10:54,010 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//b[contains(text(), 'Type')]/../following-sibling::td"): Debit
+2025-05-09 07:10:54,025 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//b[contains(text(), 'Amount')]/../following-sibling::td"): $3.00
+2025-05-09 07:10:54,038 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//b[contains(text(), 'Transaction ID')]/../following-sibling::td"): 15475
+2025-05-09 07:10:54,051 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//b[contains(text(), 'Date')]/../following-sibling::td"): 05-09-2025
+2025-05-09 07:10:54,196 - AccountServices - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//a[contains(text(),'Accounts Overview')]")
+2025-05-09 07:10:59,207 - AccountOverview - INFO - Web_Utils.py:60 - Element ('xpath', "//table[@id='accountTable']/descendant::a[text()='14121']") visibility: True
+2025-05-09 07:10:59,310 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//td/a[text()='14121']/../following-sibling::td[1]"): -$5.00
+2025-05-09 07:10:59,320 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//td/a[text()='14121']/../following-sibling::td[1]"): -$5.00
+2025-05-09 07:10:59,472 - AccountOverview - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//table[@id='accountTable']/descendant::a[text()='14121']")
+2025-05-09 07:10:59,688 - AccountOverview - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//td[text()='$3.00']/preceding-sibling::td/a[contains(text(), 'Received')]")
+2025-05-09 07:10:59,700 - AccountOverview - INFO - Web_Utils.py:60 - Element ('xpath', "//h1[contains(text(), 'Transaction Details')]") visibility: True
+2025-05-09 07:10:59,829 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//h1[contains(text(), 'Transaction Details')]/following-sibling::table"): Transaction ID: 15586
+Date: 05-09-2025
+Description: Funds Transfer Received
+Type: Credit
+Amount: $3.00
+2025-05-09 07:10:59,839 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//b[contains(text(), 'Description')]/../following-sibling::td"): Funds Transfer Received
+2025-05-09 07:10:59,849 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//b[contains(text(), 'Type')]/../following-sibling::td"): Credit
+2025-05-09 07:10:59,858 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//b[contains(text(), 'Amount')]/../following-sibling::td"): $3.00
+2025-05-09 07:10:59,868 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//b[contains(text(), 'Transaction ID')]/../following-sibling::td"): 15586
+2025-05-09 07:10:59,878 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//b[contains(text(), 'Date')]/../following-sibling::td"): 05-09-2025

@@ -1,0 +1,5 @@
+Loan Provider: Wealth Securities Dynamic Loans (WSDL)
+Date: 05-9-2025
+Status: Approved
+Congratulations, your loan has been approved.
+Your new account number: 14454

@@ -1,0 +1,38 @@
+2025-05-09 07:11:00,028 - AccountServices - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//a[contains(text(),'Request Loan')]")
+2025-05-09 07:11:00,055 - RequestLoan - INFO - Web_Utils.py:60 - Element ('xpath', "//h1[contains(text(),'Apply for a Loan')]") visibility: True
+2025-05-09 07:11:00,166 - RequestLoan - INFO - Request_Loan.py:42 - Navigate to the Request Loan page
+2025-05-09 07:11:00,215 - RequestLoan - INFO - Web_Utils.py:43 - Entered text in element ('id', 'amount'): 10
+2025-05-09 07:11:00,267 - RequestLoan - INFO - Web_Utils.py:43 - Entered text in element ('id', 'downPayment'): 2
+2025-05-09 07:11:00,325 - RequestLoan - INFO - Web_Utils.py:120 - Selected option with value '14343' from dropdown ('id', 'fromAccountId')
+2025-05-09 07:11:00,494 - RequestLoan - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//input[@value='Apply Now']")
+2025-05-09 07:11:05,509 - RequestLoan - INFO - Web_Utils.py:60 - Element ('xpath', "//h1[contains(text(),'Loan Request Processed')]") visibility: True
+2025-05-09 07:11:05,616 - RequestLoan - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//td[@id='loanProviderName']/parent::tr"): Loan Provider: Wealth Securities Dynamic Loans (WSDL)
+2025-05-09 07:11:05,630 - RequestLoan - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//td[@id='responseDate']/parent::tr"): Date: 05-9-2025
+2025-05-09 07:11:05,643 - RequestLoan - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//td[@id='loanStatus']/parent::tr"): Status: Approved
+2025-05-09 07:11:05,656 - RequestLoan - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'loanRequestApproved'): Congratulations, your loan has been approved.
+Your new account number: 14454
+2025-05-09 07:11:05,668 - RequestLoan - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'newAccountId'): 14454
+2025-05-09 07:11:05,828 - RequestLoan - INFO - Web_Utils.py:24 - Clicked element: ('id', 'newAccountId')
+2025-05-09 07:11:08,840 - AccountOverview - INFO - Web_Utils.py:60 - Element ('xpath', "//h1[contains(text(),'Account Details')]") visibility: True
+2025-05-09 07:11:08,932 - AccountOverview - INFO - Account_Overview.py:58 - Navigate to the Account Details page
+2025-05-09 07:11:08,943 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'accountId'): 14454
+2025-05-09 07:11:08,953 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'accountType'): LOAN
+2025-05-09 07:11:08,963 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'balance'): $10.00
+2025-05-09 07:11:08,972 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'availableBalance'): $10.00
+2025-05-09 07:11:09,140 - AccountServices - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//a[contains(text(),'Accounts Overview')]")
+2025-05-09 07:11:14,152 - AccountOverview - INFO - Web_Utils.py:60 - Element ('xpath', "//table[@id='accountTable']/descendant::a[text()='14343']") visibility: True
+2025-05-09 07:11:14,259 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//td/a[text()='14343']/../following-sibling::td[1]"): $3.00
+2025-05-09 07:11:14,269 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//td/a[text()='14343']/../following-sibling::td[1]"): $3.00
+2025-05-09 07:11:14,445 - AccountOverview - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//table[@id='accountTable']/descendant::a[text()='14343']")
+2025-05-09 07:11:14,768 - AccountOverview - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//td[text()='$2.00']/preceding-sibling::td/a[contains(text(), 'Down Payment')]")
+2025-05-09 07:11:14,783 - AccountOverview - INFO - Web_Utils.py:60 - Element ('xpath', "//h1[contains(text(), 'Transaction Details')]") visibility: True
+2025-05-09 07:11:14,928 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//h1[contains(text(), 'Transaction Details')]/following-sibling::table"): Transaction ID: 15697
+Date: 05-09-2025
+Description: Down Payment for Loan # 14454
+Type: Debit
+Amount: $2.00
+2025-05-09 07:11:14,939 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//b[contains(text(), 'Description')]/../following-sibling::td"): Down Payment for Loan # 14454
+2025-05-09 07:11:14,949 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//b[contains(text(), 'Type')]/../following-sibling::td"): Debit
+2025-05-09 07:11:14,959 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//b[contains(text(), 'Amount')]/../following-sibling::td"): $2.00
+2025-05-09 07:11:14,969 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//b[contains(text(), 'Transaction ID')]/../following-sibling::td"): 15697
+2025-05-09 07:11:14,979 - AccountOverview - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//b[contains(text(), 'Date')]/../following-sibling::td"): 05-09-2025

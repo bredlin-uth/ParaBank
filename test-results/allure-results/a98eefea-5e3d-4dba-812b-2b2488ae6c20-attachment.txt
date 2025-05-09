@@ -1,5 +1,0 @@
-INFO     Login:Web_Utils.py:43 Entered text in element ('xpath', "//div[@class='login']/input[@name='username']"): matthew66487
-INFO     Login:Web_Utils.py:43 Entered text in element ('xpath', "//div[@class='login']/input[@name='password']"): Test@123
-INFO     Login:Web_Utils.py:24 Clicked element: ('xpath', "//div[@class='login']/input[@value='Log In']")
-INFO     AccountServices:Web_Utils.py:60 Element ('xpath', "//p[@class='smallText']") visibility: True
-INFO     AccountServices:Web_Utils.py:91 Retrieved text from element ('xpath', "//p[@class='smallText']"): Welcome David Johnson
