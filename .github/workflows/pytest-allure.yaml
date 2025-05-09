@@ -53,11 +53,30 @@ jobs:
         name: test-results
         path: test-results/
 
+
+#    - name: Deploy reports to gh-pages
+#      if: always()
+#      uses: peaceiris/actions-gh-pages@v3
+#      with:
+#        github_token: ${{ secrets.GITHUB_TOKEN }}
+#        publish_dir: ./test-results
+#        publish_branch: gh-pages
+#        destination_dir: test-results
+
+    - name: Prepare for deployment
+      if: always()
+      run: |
+        # Move Allure report to root of publish directory
+        mv ./test-results/allure-report ./allure-report
+        # Keep other reports in test-results
+        mkdir -p ./reports
+        mv ./test-results/html-reports ./reports/
+        mv ./test-results/logs ./reports/
+
     - name: Deploy reports to gh-pages
       if: always()
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./test-results
+        publish_dir: ./
         publish_branch: gh-pages
-        destination_dir: test-results
