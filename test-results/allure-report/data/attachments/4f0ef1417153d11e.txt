@@ -1,0 +1,189 @@
+2025-05-09 06:32:15,864 - UpdateContactInfo - INFO - Web_Utils.py:24 - Clicked element: ('link text', 'Update Contact Info')
+2025-05-09 06:32:30,922 - UpdateContactInfo - ERROR - Web_Utils.py:52 - Error entering text for element ('id', 'customer.firstName'): Message: 
+Stacktrace:
+#0 0x5601493a578a <unknown>
+#1 0x560148e480a0 <unknown>
+#2 0x560148e999b0 <unknown>
+#3 0x560148e99ba1 <unknown>
+#4 0x560148ee7ea4 <unknown>
+#5 0x560148ebf3cd <unknown>
+#6 0x560148ee52a0 <unknown>
+#7 0x560148ebf173 <unknown>
+#8 0x560148e8bd4b <unknown>
+#9 0x560148e8c9b1 <unknown>
+#10 0x56014936a93b <unknown>
+#11 0x56014936e83a <unknown>
+#12 0x560149352692 <unknown>
+#13 0x56014936f3c4 <unknown>
+#14 0x5601493374cf <unknown>
+#15 0x560149393568 <unknown>
+#16 0x560149393746 <unknown>
+#17 0x5601493a45f6 <unknown>
+#18 0x7f86b669caa4 <unknown>
+#19 0x7f86b6729c3c <unknown>
+
+2025-05-09 06:32:45,974 - UpdateContactInfo - ERROR - Web_Utils.py:52 - Error entering text for element ('id', 'customer.lastName'): Message: 
+Stacktrace:
+#0 0x5601493a578a <unknown>
+#1 0x560148e480a0 <unknown>
+#2 0x560148e999b0 <unknown>
+#3 0x560148e99ba1 <unknown>
+#4 0x560148ee7ea4 <unknown>
+#5 0x560148ebf3cd <unknown>
+#6 0x560148ee52a0 <unknown>
+#7 0x560148ebf173 <unknown>
+#8 0x560148e8bd4b <unknown>
+#9 0x560148e8c9b1 <unknown>
+#10 0x56014936a93b <unknown>
+#11 0x56014936e83a <unknown>
+#12 0x560149352692 <unknown>
+#13 0x56014936f3c4 <unknown>
+#14 0x5601493374cf <unknown>
+#15 0x560149393568 <unknown>
+#16 0x560149393746 <unknown>
+#17 0x5601493a45f6 <unknown>
+#18 0x7f86b669caa4 <unknown>
+#19 0x7f86b6729c3c <unknown>
+
+2025-05-09 06:33:01,017 - UpdateContactInfo - ERROR - Web_Utils.py:52 - Error entering text for element ('id', 'customer.address.street'): Message: 
+Stacktrace:
+#0 0x5601493a578a <unknown>
+#1 0x560148e480a0 <unknown>
+#2 0x560148e999b0 <unknown>
+#3 0x560148e99ba1 <unknown>
+#4 0x560148ee7ea4 <unknown>
+#5 0x560148ebf3cd <unknown>
+#6 0x560148ee52a0 <unknown>
+#7 0x560148ebf173 <unknown>
+#8 0x560148e8bd4b <unknown>
+#9 0x560148e8c9b1 <unknown>
+#10 0x56014936a93b <unknown>
+#11 0x56014936e83a <unknown>
+#12 0x560149352692 <unknown>
+#13 0x56014936f3c4 <unknown>
+#14 0x5601493374cf <unknown>
+#15 0x560149393568 <unknown>
+#16 0x560149393746 <unknown>
+#17 0x5601493a45f6 <unknown>
+#18 0x7f86b669caa4 <unknown>
+#19 0x7f86b6729c3c <unknown>
+
+2025-05-09 06:33:16,061 - UpdateContactInfo - ERROR - Web_Utils.py:52 - Error entering text for element ('id', 'customer.address.city'): Message: 
+Stacktrace:
+#0 0x5601493a578a <unknown>
+#1 0x560148e480a0 <unknown>
+#2 0x560148e999b0 <unknown>
+#3 0x560148e99ba1 <unknown>
+#4 0x560148ee7ea4 <unknown>
+#5 0x560148ebf3cd <unknown>
+#6 0x560148ee52a0 <unknown>
+#7 0x560148ebf173 <unknown>
+#8 0x560148e8bd4b <unknown>
+#9 0x560148e8c9b1 <unknown>
+#10 0x56014936a93b <unknown>
+#11 0x56014936e83a <unknown>
+#12 0x560149352692 <unknown>
+#13 0x56014936f3c4 <unknown>
+#14 0x5601493374cf <unknown>
+#15 0x560149393568 <unknown>
+#16 0x560149393746 <unknown>
+#17 0x5601493a45f6 <unknown>
+#18 0x7f86b669caa4 <unknown>
+#19 0x7f86b6729c3c <unknown>
+
+2025-05-09 06:33:31,112 - UpdateContactInfo - ERROR - Web_Utils.py:52 - Error entering text for element ('id', 'customer.address.state'): Message: 
+Stacktrace:
+#0 0x5601493a578a <unknown>
+#1 0x560148e480a0 <unknown>
+#2 0x560148e999b0 <unknown>
+#3 0x560148e99ba1 <unknown>
+#4 0x560148ee7ea4 <unknown>
+#5 0x560148ebf3cd <unknown>
+#6 0x560148ee52a0 <unknown>
+#7 0x560148ebf173 <unknown>
+#8 0x560148e8bd4b <unknown>
+#9 0x560148e8c9b1 <unknown>
+#10 0x56014936a93b <unknown>
+#11 0x56014936e83a <unknown>
+#12 0x560149352692 <unknown>
+#13 0x56014936f3c4 <unknown>
+#14 0x5601493374cf <unknown>
+#15 0x560149393568 <unknown>
+#16 0x560149393746 <unknown>
+#17 0x5601493a45f6 <unknown>
+#18 0x7f86b669caa4 <unknown>
+#19 0x7f86b6729c3c <unknown>
+
+2025-05-09 06:33:46,161 - UpdateContactInfo - ERROR - Web_Utils.py:52 - Error entering text for element ('id', 'customer.address.zipCode'): Message: 
+Stacktrace:
+#0 0x5601493a578a <unknown>
+#1 0x560148e480a0 <unknown>
+#2 0x560148e999b0 <unknown>
+#3 0x560148e99ba1 <unknown>
+#4 0x560148ee7ea4 <unknown>
+#5 0x560148ebf3cd <unknown>
+#6 0x560148ee52a0 <unknown>
+#7 0x560148ebf173 <unknown>
+#8 0x560148e8bd4b <unknown>
+#9 0x560148e8c9b1 <unknown>
+#10 0x56014936a93b <unknown>
+#11 0x56014936e83a <unknown>
+#12 0x560149352692 <unknown>
+#13 0x56014936f3c4 <unknown>
+#14 0x5601493374cf <unknown>
+#15 0x560149393568 <unknown>
+#16 0x560149393746 <unknown>
+#17 0x5601493a45f6 <unknown>
+#18 0x7f86b669caa4 <unknown>
+#19 0x7f86b6729c3c <unknown>
+
+2025-05-09 06:34:04,189 - UpdateContactInfo - ERROR - Web_Utils.py:52 - Error entering text for element ('id', 'customer.phoneNumber'): Message: 
+Stacktrace:
+#0 0x5601493a578a <unknown>
+#1 0x560148e480a0 <unknown>
+#2 0x560148e999b0 <unknown>
+#3 0x560148e99ba1 <unknown>
+#4 0x560148ee7ea4 <unknown>
+#5 0x560148ebf3cd <unknown>
+#6 0x560148ee52a0 <unknown>
+#7 0x560148ebf173 <unknown>
+#8 0x560148e8bd4b <unknown>
+#9 0x560148e8c9b1 <unknown>
+#10 0x56014936a93b <unknown>
+#11 0x56014936e83a <unknown>
+#12 0x560149352692 <unknown>
+#13 0x56014936f3c4 <unknown>
+#14 0x5601493374cf <unknown>
+#15 0x560149393568 <unknown>
+#16 0x560149393746 <unknown>
+#17 0x5601493a45f6 <unknown>
+#18 0x7f86b669caa4 <unknown>
+#19 0x7f86b6729c3c <unknown>
+
+2025-05-09 06:34:24,210 - UpdateContactInfo - ERROR - Web_Utils.py:33 - Error clicking element ('xpath', "//input[@value='Update Profile']"): Message: 
+Stacktrace:
+#0 0x5601493a578a <unknown>
+#1 0x560148e480a0 <unknown>
+#2 0x560148e999b0 <unknown>
+#3 0x560148e99ba1 <unknown>
+#4 0x560148ee7ea4 <unknown>
+#5 0x560148ebf3cd <unknown>
+#6 0x560148ee52a0 <unknown>
+#7 0x560148ebf173 <unknown>
+#8 0x560148e8bd4b <unknown>
+#9 0x560148e8c9b1 <unknown>
+#10 0x56014936a93b <unknown>
+#11 0x56014936e83a <unknown>
+#12 0x560149352692 <unknown>
+#13 0x56014936f3c4 <unknown>
+#14 0x5601493374cf <unknown>
+#15 0x560149393568 <unknown>
+#16 0x560149393746 <unknown>
+#17 0x5601493a45f6 <unknown>
+#18 0x7f86b669caa4 <unknown>
+#19 0x7f86b6729c3c <unknown>
+
+2025-05-09 06:34:39,228 - UpdateContactInfo - ERROR - Web_Utils.py:75 - Timeout: Element ('xpath', "//h1[normalize-space()='Profile Updated']") not visible.
+2025-05-09 06:34:39,242 - UpdateContactInfo - INFO - Web_Utils.py:72 - Element ('xpath', "//p[@class='error']") is now visible.
+2025-05-09 06:34:39,255 - UpdateContactInfo - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//p[@class='error']"): An internal error has occurred and has been logged.
+2025-05-09 06:34:39,255 - UpdateContactInfo - ERROR - Update_Contact_Info.py:86 - An internal error has occurred and has been logged.

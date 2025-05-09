@@ -1,0 +1,12 @@
+INFO     AccountServices:Web_Utils.py:24 Clicked element: ('xpath', "//a[contains(text(),'Bill Pay')]")
+INFO     BillPay:Web_Utils.py:60 Element ('xpath', "//h1[contains(text(),'Bill Payment Service')]") visibility: True
+INFO     BillPay:Bill_Pay.py:44 Navigate to the Bill Pay page
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'payee.name'): Tiffany
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'payee.address.street'): 268 Kristin Cove
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'payee.address.city'): West Sean
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'payee.address.state'): New York
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'payee.address.zipCode'): 579340
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'payee.phoneNumber'): 8823009403
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'payee.accountNumber'): 2216
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'verifyAccount'): 2216
+INFO     BillPay:Web_Utils.py:43 Entered text in element ('name', 'amount'): 2
