@@ -1,0 +1,31 @@
+2025-05-09 04:43:40,707 - WDM - INFO - logger.py:11 - ====== WebDriver manager ======
+2025-05-09 04:43:46,945 - WDM - INFO - logger.py:11 - Get LATEST chromedriver version for google-chrome
+2025-05-09 04:43:46,959 - WDM - INFO - logger.py:11 - Get LATEST chromedriver version for google-chrome
+2025-05-09 04:43:46,970 - WDM - INFO - logger.py:11 - There is no [linux64] chromedriver "136.0.7103.92" for browser google-chrome "136.0.7103" in cache
+2025-05-09 04:43:46,970 - WDM - INFO - logger.py:11 - Get LATEST chromedriver version for google-chrome
+2025-05-09 04:43:47,012 - WDM - INFO - logger.py:11 - WebDriver version 136.0.7103.92 selected
+2025-05-09 04:43:47,015 - WDM - INFO - logger.py:11 - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.92/linux64/chromedriver-linux64.zip
+2025-05-09 04:43:47,015 - WDM - INFO - logger.py:11 - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.92/linux64/chromedriver-linux64.zip
+2025-05-09 04:43:47,044 - WDM - INFO - logger.py:11 - Driver downloading response is 200
+2025-05-09 04:43:47,105 - WDM - INFO - logger.py:11 - Get LATEST chromedriver version for google-chrome
+2025-05-09 04:43:47,225 - WDM - INFO - logger.py:11 - Driver has been saved in cache [/home/runner/.wdm/drivers/chromedriver/linux64/136.0.7103.92]
+2025-05-09 04:43:57,360 - Register - INFO - Web_Utils.py:24 - Clicked element: ('link text', 'Register')
+2025-05-09 04:43:57,386 - Register - INFO - Web_Utils.py:60 - Element ('xpath', "//h1[normalize-space()='Signing up is easy!']") visibility: True
+2025-05-09 04:43:57,530 - Register - INFO - Register.py:36 - Navigate to the Register page
+2025-05-09 04:43:57,738 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.firstName'): Timothy
+2025-05-09 04:43:57,800 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.lastName'): Stokes
+2025-05-09 04:43:57,867 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.address.street'): 023 Hammond Overpass Suite 726
+2025-05-09 04:43:57,928 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.address.city'): Lake Anthonyland
+2025-05-09 04:43:57,986 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.address.state'): New Hampshire
+2025-05-09 04:43:58,042 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.address.zipCode'): 300853
+2025-05-09 04:43:58,100 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.phoneNumber'): 7819147858
+2025-05-09 04:43:58,154 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.ssn'): 5270
+2025-05-09 04:43:58,214 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.username'): taylor23091
+2025-05-09 04:43:58,336 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'customer.password'): Test@123
+2025-05-09 04:43:58,394 - Register - INFO - Web_Utils.py:43 - Entered text in element ('id', 'repeatedPassword'): Test@123
+2025-05-09 04:43:59,069 - Register - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//input[@value='Register']")
+2025-05-09 04:44:02,085 - AccountServices - INFO - Web_Utils.py:60 - Element ('xpath', "//div[@id='rightPanel']") visibility: True
+2025-05-09 04:44:02,189 - AccountServices - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//div[@id='rightPanel']"): Welcome taylor23091
+Your account was created successfully. You are now logged in.
+2025-05-09 04:44:02,201 - AccountServices - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//div[@id='rightPanel']/h1[@class='title']"): Welcome taylor23091
+2025-05-09 04:44:02,554 - AccountServices - INFO - Web_Utils.py:24 - Clicked element: ('link text', 'Log Out')

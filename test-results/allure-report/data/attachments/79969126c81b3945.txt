@@ -1,5 +1,0 @@
-Transaction ID: 17584
-Date: 05-08-2025
-Description: Down Payment for Loan # 19338
-Type: Debit
-Amount: $2.00

@@ -1,0 +1,20 @@
+2025-05-09 04:44:31,011 - AccountServices - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//a[contains(text(),'Bill Pay')]")
+2025-05-09 04:44:31,030 - BillPay - INFO - Web_Utils.py:60 - Element ('xpath', "//h1[contains(text(),'Bill Payment Service')]") visibility: True
+2025-05-09 04:44:31,140 - BillPay - INFO - Bill_Pay.py:44 - Navigate to the Bill Pay page
+2025-05-09 04:44:31,197 - BillPay - INFO - Web_Utils.py:43 - Entered text in element ('name', 'payee.name'): Elizabeth
+2025-05-09 04:44:31,259 - BillPay - INFO - Web_Utils.py:43 - Entered text in element ('name', 'payee.address.street'): 41758 Michael Trail
+2025-05-09 04:44:31,316 - BillPay - INFO - Web_Utils.py:43 - Entered text in element ('name', 'payee.address.city'): Jamesshire
+2025-05-09 04:44:31,373 - BillPay - INFO - Web_Utils.py:43 - Entered text in element ('name', 'payee.address.state'): Kansas
+2025-05-09 04:44:31,428 - BillPay - INFO - Web_Utils.py:43 - Entered text in element ('name', 'payee.address.zipCode'): 447184
+2025-05-09 04:44:31,485 - BillPay - INFO - Web_Utils.py:43 - Entered text in element ('name', 'payee.phoneNumber'): 8851433701
+2025-05-09 04:44:31,539 - BillPay - INFO - Web_Utils.py:43 - Entered text in element ('name', 'payee.accountNumber'): 1033
+2025-05-09 04:44:31,593 - BillPay - INFO - Web_Utils.py:43 - Entered text in element ('name', 'verifyAccount'): 1033
+2025-05-09 04:44:31,645 - BillPay - INFO - Web_Utils.py:43 - Entered text in element ('name', 'amount'): 2
+2025-05-09 04:44:31,704 - BillPay - INFO - Web_Utils.py:120 - Selected option with value '13899' from dropdown ('name', 'fromAccountId')
+2025-05-09 04:44:31,742 - BillPay - INFO - Web_Utils.py:107 - Selected option '13899' from dropdown ('name', 'fromAccountId')
+2025-05-09 04:44:31,905 - BillPay - INFO - Web_Utils.py:24 - Clicked element: ('xpath', "//input[@value='Send Payment']")
+2025-05-09 04:44:34,920 - BillPay - INFO - Web_Utils.py:60 - Element ('xpath', "//h1[contains(text(),'Bill Payment Complete')]") visibility: True
+2025-05-09 04:44:35,036 - BillPay - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'payeeName'): Elizabeth
+2025-05-09 04:44:35,049 - BillPay - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'amount'): $2.00
+2025-05-09 04:44:35,061 - BillPay - INFO - Web_Utils.py:91 - Retrieved text from element ('id', 'fromAccountId'): 13899
+2025-05-09 04:44:35,074 - BillPay - INFO - Web_Utils.py:91 - Retrieved text from element ('xpath', "//h1[contains(text(),'Bill Payment Complete')]/following-sibling::p"): Bill Payment to Elizabeth in the amount of $2.00 from account 13899 was successful.
